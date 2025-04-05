@@ -27,49 +27,28 @@ organizations:
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
-  - icon: at-symbol
-    url: 'yiqizhao@usc.edu'
-    label: E-mail Me
   - icon: brands/github
     url: https://github.com/zhaoy37
   - icon: brands/linkedin
     url: https://linkedin.com/in/nick-yiqi-zhao-0449781b1
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=yDTi2z8AAAAJ&hl=en
+  - icon: "custom/researchgate"
+    url: https://www.researchgate.net/profile/Yiqi-Zhao-14
 
 interests:
   - Formal Methods
   - Cyber-Physical Systems
   - Systems and Control Theory
-  - Mathematical Optimization
+  - Robotics
 
 education:
   - area: PhD Computer Science
     institution: University of Southern California
-    # date_start: 2016-01-01
-    # date_end: 2020-12-31
-    # summary: |
-    #   Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    # button:
-    #   text: 'Read Thesis'
-    #   url: 'https://example.com'
   - area: BSc, magna cum laude, Honors in Computer Science
     institution: Vanderbilt University
-    # date_start: 2016-01-01
-    # date_end: 2020-12-31
-    # summary: |
-    #   GPA: 3.8/4.0
-
-    #   Courses included:
-    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
-    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
-    #   - lorem ipsum dolor sit amet, consectetur adipiscing elit
 
 ---
-
-## About Me
-
-
-<b>Yiqi (Nick) Zhao</b> is a PhD Student for Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a>. He works with <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. His research interests include design, verification, and testing of learning-enabled Cyber-Physical Systems (CPS) with formal methods and control theoretic approaches. Before this, he was a student at <a href = 'https://engineering.vanderbilt.edu/cs/'>Vanderbilt University</a>, who majored in Computer Science and Mathematics (Applied Track) and minored in Electrical Engineering and Data Science. At Vanderbilt, he worked with <a href = "https://meiyima.github.io/">Professor Meiyi Ma</a> on smart city and specification-enhanced machine learning.
+<b>Yiqi (Nick) Zhao</b> is a PhD Student for Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a>. He works with <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. His research interests include design, verification, and testing of learning-enabled Cyber-Physical Systems (CPS) and Robotics.
 
 {style="text-align: justify;"}
