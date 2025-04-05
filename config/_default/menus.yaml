@@ -11,5 +11,5 @@ main:
     url: /#papers
     weight: 11
   - name: Experience
-    url: /#work
-    weight: 11
+    url: experience/
+    weight: 12
