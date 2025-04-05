@@ -35,6 +35,9 @@ profiles:
     url: https://scholar.google.com/citations?user=yDTi2z8AAAAJ&hl=en
   - icon: brands/x
     url: https://x.com/ZhaoYiqi87035
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Yiqi-Zhao-14
+
 
 interests:
   - Formal Methods
