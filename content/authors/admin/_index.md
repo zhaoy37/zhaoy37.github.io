@@ -33,8 +33,6 @@ profiles:
     url: https://linkedin.com/in/nick-yiqi-zhao-0449781b1
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=yDTi2z8AAAAJ&hl=en
-  - icon: "custom/researchgate"
-    url: https://www.researchgate.net/profile/Yiqi-Zhao-14
 
 interests:
   - Formal Methods
@@ -49,6 +47,10 @@ education:
     institution: Vanderbilt University
 
 ---
+
+## About Me
+
+
 <b>Yiqi (Nick) Zhao</b> is a PhD Student for Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a>. He works with <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. His research interests include design, verification, and testing of learning-enabled Cyber-Physical Systems (CPS) and Robotics.
 
 {style="text-align: justify;"}
