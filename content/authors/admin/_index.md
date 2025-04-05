@@ -33,6 +33,8 @@ profiles:
     url: https://linkedin.com/in/nick-yiqi-zhao-0449781b1
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=yDTi2z8AAAAJ&hl=en
+  - icon: brands/x
+    url: https://x.com/ZhaoYiqi87035
 
 interests:
   - Formal Methods
