@@ -27,16 +27,16 @@ organizations:
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=yDTi2z8AAAAJ&hl=en
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Yiqi-Zhao-14
   - icon: brands/github
     url: https://github.com/zhaoy37
   - icon: brands/linkedin
     url: https://linkedin.com/in/nick-yiqi-zhao-0449781b1
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=yDTi2z8AAAAJ&hl=en
   - icon: brands/x
     url: https://x.com/ZhaoYiqi87035
-  - icon: academicons/researchgate
-    url: https://www.researchgate.net/profile/Yiqi-Zhao-14
 
 
 interests:
@@ -46,16 +46,18 @@ interests:
   - Robotics
 
 education:
-  - area: PhD Computer Science
+  - area: PhD, Computer Science
     institution: University of Southern California
+    year: 2023 - Now
   - area: BSc, magna cum laude, Honors in Computer Science
     institution: Vanderbilt University
+    year: 2020-2023
 
 ---
 
 ## About Me
 
 
-<b>Yiqi (Nick) Zhao</b> is a PhD Student in Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a>. He works with <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. He obtained his bachelor's degree at <a href = 'https://engineering.vanderbilt.edu/cs/'>Vanderbilt University</a> and closely worked with  <a href = "https://meiyima.github.io/">Professor Meiyi Ma</a>. His research interests include design, verification, and testing of <b>safe learning-enabled Cyber-Physical Systems (CPS) and Robotics</b>, utilizing tools from formal methods, statistics, and systems and control theory.
+<b>Yiqi (Nick) Zhao</b> is a PhD Student in Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a>. He works with <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. He obtained his bachelor's degree at <a href = 'https://engineering.vanderbilt.edu/cs/'>Vanderbilt University</a> where he closely worked with  <a href = "https://meiyima.github.io/">Professor Meiyi Ma</a>. His research interests include design, verification, and testing of <b>safe learning-enabled Cyber-Physical Systems (CPS) and Robotics</b>, utilizing tools from formal methods, statistics, optimization, and systems and control theory.
 
 {style="text-align: justify;"}
