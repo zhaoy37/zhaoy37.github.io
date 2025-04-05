@@ -5,14 +5,10 @@ title: 'Conformal Predictive Programming for Chance Constrained Optimization'
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-- admin
-- Xinyi Yu
+- admin *
+- Xinyi Yu*
 - Jyotirmoy V. Deshmukh
 - Lars Lindemann
-
-author_notes:
-  - 'Equal contribution'
-  - 'Equal contribution'
 
 date: '2024-02-12'
 doi: ''
