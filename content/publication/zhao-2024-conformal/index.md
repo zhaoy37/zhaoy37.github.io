@@ -51,6 +51,6 @@ image:
 <center>
 
 ![MKCT_workflow](featured.png)
-<small>Conformal Predictive Programming</small>
+<small>Conformal Predictive Programming Overview</small>
 
 </center>
