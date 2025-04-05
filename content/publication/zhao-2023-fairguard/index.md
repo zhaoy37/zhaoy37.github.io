@@ -35,7 +35,7 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://arxiv.org/pdf/2302.11137.pdf'
+url_pdf: 'https://arxiv.org/pdf/2302.11137'
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -55,7 +55,6 @@ image:
 <center>
 
 ![MKCT_workflow](featured.png)
-<small>Fairguard overview (feature data - demographic or socioeconomic feature values
-associated with studied city regions, e.g., household mean income)</small>
+<small>Fairguard overview (feature data - demographic or socioeconomic feature values associated with studied city regions, e.g., household mean income)</small>
 
 </center>
