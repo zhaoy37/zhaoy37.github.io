@@ -48,10 +48,8 @@ interests:
 education:
   - area: PhD, Computer Science
     institution: University of Southern California
-    year: 2023 - Now
   - area: BSc, magna cum laude, Honors in Computer Science
     institution: Vanderbilt University
-    year: 2020-2023
 
 ---
 
