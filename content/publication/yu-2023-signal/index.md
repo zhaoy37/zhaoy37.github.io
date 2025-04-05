@@ -34,7 +34,7 @@ featured: false
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: 'https://arxiv.org/pdf/2312.04242.pdf'
+url_pdf: 'https://arxiv.org/pdf/2312.04242'
 url_code: 'https://github.com/SAIDS-Lab/STL-Synthesis-among-Uncontrollable-Agents'
 url_dataset: ''
 url_poster: ''
