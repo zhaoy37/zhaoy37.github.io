@@ -21,7 +21,7 @@ role: PhD Student, Computer Science
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Viterbi School of Engineering, University of Southern California
+  - name: University of Southern California
     url: https://viterbischool.usc.edu/
 
 # Social network links
