@@ -51,4 +51,36 @@ sections:
         exclude_featured: false
     design:
       view: citation
+  - block: collection
+    id: work
+    content:
+      title: Work Experience
+      # Date format for experience
+      #   Refer to https://wowchemy.com/docs/customization/#date-format
+      date_format: Jan 2006
+      # Experiences.
+      #   Add/remove as many `experience` items below as you like.
+      #   Required fields are `title`, `company`, and `date_start`.
+      #   Leave `date_end` empty if it's your current employer.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+        - title: Grader of CS 4260 (Artificial Intelligence)
+          company: Vanderbilt University
+          company_url: ''
+          company_logo: org-v
+          location: Nashville
+          date_start: '2022-08-01'
+          date_end: '2023-05-01'
+          description: I graded students' homework and hold office hours on a regular basis to answer students' questions.
+        - title: Application Development Intern
+          company: ADP
+          company_url: ''
+          company_logo: org-adp
+          location: Roseland
+          date_start: '2022-06-01'
+          date_end: '2022-08-01'
+          description: I worked as an Application Development Intern within the Global Product & Tech (GPT) group at ADP. I developed an API for Notification Replay for the Autopay group using Spring Boot and MongoDB, etc.
+    design:
+      columns: '2'
+
 ---
