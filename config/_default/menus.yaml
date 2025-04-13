@@ -10,6 +10,3 @@ main:
   - name: Papers
     url: /#papers
     weight: 11
-  - name: Work
-    url: /#work
-    weight: 12
