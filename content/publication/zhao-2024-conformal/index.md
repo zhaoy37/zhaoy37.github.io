@@ -7,6 +7,7 @@ title: 'Conformal Predictive Programming for Chance Constrained Optimization'
 authors:
 - admin
 - Xinyi Yu
+- Matteo Sesia
 - Jyotirmoy V. Deshmukh
 - Lars Lindemann
 
@@ -21,11 +22,11 @@ publication_types: ["article"]
 # Publication name and optional abbreviated publication name.
 publication: '*arXiv preprint arXiv:2402.07407*'
 
-abstract: Motivated by the advances in conformal prediction (CP), we propose conformal predictive programming (CPP), an approach to solve chance constrained optimization (CCO) problems, i.e., optimization problems with nonlinear constraint functions affected by arbitrary random parameters. CPP utilizes samples from these random parameters along with the quantile lemma – which is central to CP – to transform the CCO problem into a deterministic optimization problem. We then present two tractable reformulations of CPP by (1) writing the quantile as a linear program along with its KKT conditions (CPP-KKT), and (2) using mixed integer programming (CPP-MIP). CPP comes with marginal probabilistic feasibility guarantees for the CCO problem that are conceptually different from existing approaches, e.g., the sample approximation and the scenario approach. While we explore algorithmic similarities with the sample approximation approach, we emphasize that the strength of CPP is that it can easily be extended to incorporate different variants of CP. To illustrate this, we present robust conformal predictive programming to deal with distribution shifts in the uncertain parameters of the CCO problem.
+abstract: We propose conformal predictive programming (CPP), a framework to solve chance constrained optimization problems, i.e., optimization problems with constraints that are functions of random variables. CPP utilizes samples from these random variables along with the quantile lemma - central to conformal prediction - to transform the chance constrained optimization problem into a deterministic problem with a quantile reformulation. CPP inherits a priori guarantees on constraint satisfaction from existing sample average approximation approaches for a class of chance constrained optimization problems, and it provides a posteriori guarantees that are of conditional and marginal nature otherwise. The strength of CPP is that it can easily support different variants of conformal prediction which have been (or will be) proposed within the conformal prediction community. To illustrate this, we present robust CPP to deal with distribution shifts in the random variables and Mondrian CPP to deal with class conditional chance constraints. To enable tractable solutions to the quantile reformulation, we present a mixed integer programming method (CPP-MIP) encoding, a bilevel optimization strategy (CPP-Bilevel), and a sampling-and-discarding optimization strategy (CPP-Discarding). We also extend CPP to deal with joint chance constrained optimization (JCCO). In a series of case studies, we show the validity of the aforementioned approaches, empirically compare CPP-MIP, CPP-Bilevel, as well as CPP-Discarding, and illustrate the advantage of CPP as compared to scenario approach.
 
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Custom links (uncomment lines below)
 # links:
