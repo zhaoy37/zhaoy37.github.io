@@ -27,7 +27,7 @@ With this open format, can even edit your mindmaps in other popular tools such a
 
 Simply insert a Markdown code block labelled as `markmap` and optionally set the height of the mindmap as shown in the example below.
 
-Mindmaps can be created by simply writing the items as a Markdown list within the `markmap` code block, indenting each item to create as many sub-levels as you need:
+Mindmaps can be created by simply writing the items as a Markdown list within the `markmap` code block, indenting each item to create as manysub-levels as you need:
 
 <div class="highlight">
 <pre class="chroma">
