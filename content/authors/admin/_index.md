@@ -56,6 +56,6 @@ education:
 ## About Me
 
 
-<b>Yiqi (Nick) Zhao</b> is a PhD Student in Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a>. He is advised by <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://yuewang.xyz/"> Professor Yue Wang </a>. He also works closely with <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. He obtained his bachelor's degree at <a href = 'https://engineering.vanderbilt.edu/cs/'>Vanderbilt University</a> where he closely worked with  <a href = "https://meiyima.github.io/">Professor Meiyi Ma</a>. His research interests include neurosymbolic cyber-physical systems (CPS) and robotics design and verification.
+<b>Yiqi (Nick) Zhao</b> is a PhD Student in Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a>. He is advised by <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://yuewang.xyz/"> Professor Yue Wang</a>. He also works closely with <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. He obtained his bachelor's degree at <a href = 'https://engineering.vanderbilt.edu/cs/'>Vanderbilt University</a> where he closely worked with <a href = "https://meiyima.github.io/">Professor Meiyi Ma</a>. His research interests include neurosymbolic cyber-physical systems (CPS) and robotics design and verification.
 
 {style="text-align: justify;"}
