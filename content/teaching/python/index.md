@@ -14,7 +14,7 @@ image:
 
 **Embed videos, podcasts, code, LaTeX math, and even test students!**
 
-On this page, you'll find some examples of the types of technical content that can be rendered with Hugo Blox.
+On this page, you'll find some examples of the types of technical content that can be rendered with Hugo Blox
 
 ## Video
 
