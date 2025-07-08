@@ -16,15 +16,15 @@ doi: ''
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["paper-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: '*arXiv preprint arXiv:2311.04242*'
+publication: 'Automatica'
 
-abstract: The control of dynamical systems under temporal logic specifications among uncontrollable dynamic agents is challenging due to the agents’ a-priori unknown behavior. Existing works have considered the problem where either all agents are controllable, the agent models are deterministic and known, or no safety guarantees are provided. We propose a predictive control synthesis framework that guarantees, with high probability, the satisfaction of signal temporal logic (STL) tasks that are defined over a controllable system in the presence of uncontrollable stochastic agents. We use trajectory predictors and conformal prediction to construct probabilistic prediction regions for each uncontrollable agent that are valid over multiple future time steps. Specifically, we construct a normalized prediction region over all agents and time steps to reduce conservatism and increase data efficiency. We then formulate a worst-case bilevel mixed integer program (MIP) that accounts for all agent realizations within the prediction region to obtain an open-loop controller that provably guarantee task satisfaction with high probability. To efficiently solve this bilevel MIP, we propose an equivalent MIP program based on KKT conditions of the original bilevel formulation. Building upon this, we design a closed-loop controller, where both recursive feasibility and task satisfaction can be guaranteed with high probability. We illustrate our control synthesis framework on two case studies.
+abstract: The control of dynamical systems under temporal logic specifications among uncontrollable dynamic agents is challenging due to the agents' a-priori unknown behavior. Existing works have considered the problem where either all agents are controllable, the agent models are deterministic and known, or no safety guarantees are provided. We propose a predictive control synthesis framework that guarantees, with high probability, the satisfaction of signal temporal logic (STL) tasks that are defined over a controllable system in the presence of uncontrollable stochastic agents. We use trajectory predictors and conformal prediction to construct probabilistic prediction regions for each uncontrollable agent that are valid over multiple future time steps. Specifically, we construct a normalized prediction region over all agents and time steps to reduce conservatism and increase data efficiency. We then formulate a worst-case bilevel mixed integer program (MIP) that accounts for all agent realizations within the prediction region to obtain an open-loop controller that provably guarantee task satisfaction with high probability. To efficiently solve this bilevel MIP, we propose an equivalent MIP program based on KKT conditions of the original bilevel formulation. Building upon this, we design a closed-loop controller, where both recursive feasibility and task satisfaction can be guaranteed with high probability. We illustrate our control synthesis framework on two case studies.
 
 # Summary. An optional shortened abstract.
-summary: Currently under review in Automatica.
+summary: Automatica. Regular Paper.
 
 # Display this page in the Featured widget?
 featured: false
