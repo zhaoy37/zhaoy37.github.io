@@ -28,7 +28,7 @@ organizations:
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=yDTi2z8AAAAJ&hl=en
+    url: https://scholar.google.com/citations?user=kim0L6QAAAAJ&hl=en
   - icon: academicons/researchgate
     url: https://www.researchgate.net/profile/Yiqi-Zhao-14
   - icon: brands/github
