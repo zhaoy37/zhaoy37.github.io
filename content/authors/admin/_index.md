@@ -58,6 +58,6 @@ education:
 ## About Me
 
 
-<b>Yiqi (Nick) Zhao</b> is a PhD Student in Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a> (USC). He is advised by <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://yuewang.xyz/"> Professor Yue Wang</a>. He is honored to be a member of the <a href = 'https://cps-vida.github.io/'>CPS-VIDA lab</a> and the <a href = 'https://usc-gvl.github.io/'>GVL Lab</a> at USC. He works closely with <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. His research interests include neurosymbolic cyber-physical systems (CPS) and robotics design and verification.
+<b>Yiqi (Nick) Zhao</b> is a PhD Student in Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a> (USC). He is advised by <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://yuewang.xyz/"> Professor Yue Wang</a>. He is honored to be a member of the <a href = 'https://cps-vida.github.io/'>CPS-VIDA lab</a> and the <a href = 'https://usc-gvl.github.io/'>GVL Lab</a> at USC. He also works closely with <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. His research interests include neurosymbolic cyber-physical systems (CPS) and robotics design and verification.
 
 {style="text-align: justify;"}
