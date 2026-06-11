@@ -43,7 +43,7 @@ window.SITE_CONFIG = {
   authors: [
     { name: "Yiqi Zhao",                 sup: "*,1", url: "https://zhaoy37.github.io/" },
     { name: "Ruohai Ge",                 sup: "*,1", url: "https://gelev97.github.io/" },
-    { name: "Celina Shiyu Wang",         sup: "1",   url: "" },
+    { name: "Celina Shiyu Wang",         sup: "1",   url: "https://www.linkedin.com/in/celina-wang-4032562ba/" },
     { name: "Junjie Ye",                 sup: "1",   url: "https://junjieye.com/" },
     { name: "Muchen Xu",                 sup: "1",   url: "" },
     { name: "Minhao Li",                 sup: "1",   url: "" },
