@@ -26,7 +26,7 @@ window.SITE_CONFIG = {
     // Affiliation line shown under the author names
     affiliations: "¹University of Southern California   ²Toyota Research Institute   ³Stanford University   *Equal contribution",
     // Short core-idea line shown in the banner under the subtitle. "" hides it.
-    tagline: "Two humans demonstrate, two robots learn: pretrain on human-human demonstrations, then finetune on a minimal set of real-robot data.",
+    tagline: "Two humans demonstrate, two robots learn: pretrain on human-human demonstrations, then finetune on a set of real-robot data.",
     // BibTeX entry shown in the citation section. "" hides it.
     bibtex: `@article{zhao2026duet,
   title   = {DUET: Dual-Robot Understanding via Efficient Teaching},
