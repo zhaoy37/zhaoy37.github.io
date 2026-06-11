@@ -1,0 +1,296 @@
+/* ============================================================
+   DUET — content sections below the banner.
+   Adapted from the AutoMerge template (polished, responsive,
+   single accent color). The fullscreen video banner keeps its
+   own Bulma styling — nothing in this file targets it.
+   ============================================================ */
+
+:root {
+  --bg:        #ffffff;
+  --bg-tint:   #f6f7f9;
+  --ink:       #15181d;     /* near-black text */
+  --ink-soft:  #4a5159;     /* secondary text */
+  --ink-faint: #8a929b;     /* captions */
+  --line:      #e6e8ec;     /* hairlines */
+  --accent:    #2f5fff;     /* single accent — change this one value to rebrand */
+  --accent-ink:#1f3fcc;
+  --accent-bg: #eef2ff;
+  --radius:    14px;
+  --radius-sm: 9px;
+  --maxw:      1000px;  /* content column width below the banner */
+  --shadow:    0 1px 2px rgba(20,24,29,.04), 0 8px 30px rgba(20,24,29,.07);
+  --shadow-lg: 0 4px 12px rgba(20,24,29,.08), 0 24px 60px rgba(20,24,29,.12);
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* !important needed: Bulma's responsive .container:not(...):not(...)
+   rules have higher specificity and would force 1152/1344px */
+main .container,
+.nav-inner,
+.footer .container { max-width: var(--maxw) !important; margin: 0 auto; padding: 0 24px; width: 100%; }
+main .container.narrow { max-width: 760px !important; }
+
+/* ---------- NAV (fixed at the very top; transparent over the
+   banner, frosted white once scrolled past it) ---------- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.nav.scrolled {
+  background: rgba(255,255,255,.78);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-color: var(--line); box-shadow: 0 1px 0 rgba(20,24,29,.03);
+}
+.nav-inner {
+  padding: 12px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.nav-brand { font-weight: 700; font-size: .95rem; color: #fff; text-decoration: none; letter-spacing: -.01em; transition: color .25s ease; }
+.nav-links { display: flex; gap: 26px; }
+.nav-links a {
+  color: rgba(255,255,255,.85); text-decoration: none; font-size: .9rem; font-weight: 500;
+  position: relative; transition: color .15s ease;
+}
+.nav-links a:hover { color: #fff; }
+.nav.scrolled .nav-brand { color: var(--ink); }
+.nav.scrolled .nav-links a { color: var(--ink-soft); }
+.nav.scrolled .nav-links a:hover { color: var(--accent); }
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0;
+  background: var(--accent); transition: width .2s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* ---------- BANNER (fullscreen video; template typography,
+   wide and centered — independent of the content column) ---------- */
+.banner-content {
+  width: 100%;
+  text-align: center; padding: 0 24px;
+  max-width: 1200px; margin: 0 auto;
+}
+.banner-venue {
+  display: inline-block;
+  font-size: .95rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  color: #fff; background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 7px 18px; border-radius: 100px; margin: 0 0 26px;
+}
+.banner-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(4rem, 12vw, 8.5rem);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  color: #fff;
+  margin: 0 0 18px;
+}
+.banner-subtitle {
+  font-size: clamp(1.3rem, 3.2vw, 2rem);
+  color: rgba(255,255,255,.92);
+  max-width: 48ch; margin: 0 auto 16px;
+}
+.banner-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  color: rgba(255,255,255,.8);
+  max-width: 52ch; margin: 0 auto 30px;
+}
+.banner-authors {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 20px;
+  font-size: 1.15rem; color: #fff; margin-bottom: 10px;
+}
+.banner-authors a, .banner-authors span { color: #fff; }
+.banner-authors a { text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; transition: border-color .15s, color .15s; }
+.banner-authors a:hover { color: #cdd9ff; border-color: currentColor; }
+.banner-authors sup { color: rgba(255,255,255,.7); font-weight: 600; }
+.banner-affiliations { color: rgba(255,255,255,.78); font-size: 1.05rem; margin-top: 6px; }
+.banner-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin: 32px 0 6px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 13px 26px; border-radius: 100px;
+  background: var(--ink); color: #fff; text-decoration: none;
+  font-weight: 600; font-size: 1rem; letter-spacing: -.01em;
+  border: 1px solid rgba(255,255,255,.18);
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+  box-shadow: var(--shadow);
+}
+.btn:hover { transform: translateY(-2px); background: var(--accent); border-color: var(--accent); box-shadow: var(--shadow-lg); }
+.btn .ico { width: 20px; height: 20px; }
+.btn img.ico { object-fit: contain; display: block; }
+
+/* YouTube / video embed (responsive 16:9) */
+.video-embed {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-lg); border: 1px solid var(--line);
+  background: #000; margin-top: 28px;
+}
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.caption { color: var(--ink-faint); font-size: .92rem; margin: 14px 0 0; max-width: 70ch; text-align: left; }
+.caption strong { color: var(--ink-soft); }
+
+/* ---------- SECTIONS ---------- */
+main .section { padding: 72px 0; border-top: 1px solid var(--line); background: var(--bg); }
+main .section-tint { background: var(--bg-tint); }
+main .section h2 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.1rem); letter-spacing: -.02em;
+  margin: 0 0 22px; text-align: left; color: var(--ink);
+}
+.lead { font-size: 1.12rem; color: var(--ink-soft); margin: 0 0 8px; text-align: left; }
+.prose { margin-top: 36px; }
+.prose h3 { font-size: 1.15rem; margin: 28px 0 6px; letter-spacing: -.01em; color: var(--ink); font-weight: 600; }
+.prose p { color: var(--ink-soft); margin: 0 0 6px; }
+main .section h3 { font-size: 1.2rem; margin: 44px 0 10px; letter-spacing: -.01em; color: var(--ink); font-weight: 600; }
+.body-text { color: var(--ink-soft); margin: 16px 0 0; }
+.muted { color: var(--ink-soft); }
+.small { font-size: .85rem; }
+
+/* Justified body paragraphs (flush left and right, like Word's
+   "Justify"). Banner, captions, cards, and BibTeX are not affected. */
+.lead,
+.body-text,
+.prose p,
+main .section > .container > .muted {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* highlight cards */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 26px 24px; box-shadow: var(--shadow); transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.card-num { font-family: var(--serif); font-size: 1.4rem; color: var(--accent); font-weight: 600; }
+.card h3 { margin: 8px 0 6px; font-size: 1.1rem; letter-spacing: -.01em; color: var(--ink); font-weight: 600; }
+.card p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+
+/* figures (images and looping videos) */
+.figure { margin: 24px 0 0; }
+.figure img,
+.figure video {
+  width: 100%; display: block; border-radius: var(--radius);
+  background: var(--bg-tint);
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+figcaption { color: var(--ink-faint); font-size: .9rem; margin-top: 12px; text-align: left; }
+figcaption strong { color: var(--ink-soft); }
+
+/* ---------- RESULT GRID (hover to play) ---------- */
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
+.grid-item {
+  margin: 0; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line); background: var(--bg); box-shadow: var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.grid-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.grid-item video {
+  width: 100%; display: block; background: var(--bg-tint);
+  aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0;
+}
+.grid-item iframe { width: 100%; display: block; aspect-ratio: 16 / 10; border: 0; }
+.grid-item figcaption { padding: 12px 16px; margin: 0; text-align: left; }
+
+/* ---------- ACADEMIC TABLES ---------- */
+.table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); margin-top: 24px; }
+.table-wrap table { width: 100%; border-collapse: collapse; background: var(--bg); font-size: .96rem; margin: 0; }
+.table-wrap thead th {
+  text-align: left; padding: 13px 18px; background: var(--ink); color: #fff; font-weight: 600;
+  white-space: nowrap;
+}
+.table-wrap thead th.num, .table-wrap tbody td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.table-wrap tbody td { padding: 12px 18px; border-top: 1px solid var(--line); color: var(--ink-soft); }
+.table-wrap tbody tr:nth-child(even) { background: var(--bg-tint); }
+.table-wrap tr.highlight td { background: var(--accent-bg) !important; color: var(--ink); }
+.table-caption { color: var(--ink-faint); font-size: .9rem; margin: 12px 0 0; }
+.table-caption strong { color: var(--ink-soft); }
+
+/* ---------- ANIMATED BAR CHART (amortized collection time) ---------- */
+.at-chart {
+  margin-top: 24px; padding: 26px 30px;
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.at-legend { display: flex; gap: 26px; margin-bottom: 18px; font-size: .9rem; font-weight: 600; color: var(--ink-soft); }
+.at-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.at-swatch { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+.at-swatch-teleop { background: #d8dde5; }
+.at-swatch-human { background: var(--accent); }
+.at-group { margin-top: 16px; }
+.at-group.at-average { margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.at-group-head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.at-task { font-weight: 600; font-size: .95rem; color: var(--ink); }
+.at-speedup {
+  font-size: .8rem; font-weight: 700;
+  color: var(--accent-ink); background: var(--accent-bg);
+  border-radius: 100px; padding: 2px 10px; white-space: nowrap;
+}
+.at-row { display: flex; align-items: center; gap: 10px; margin: 5px 0; }
+.at-track { flex: 1 1 auto; min-width: 0; }
+.at-val { flex: none; width: 58px; }
+/* Fail-safe: bars render at full width with no JS. script.js adds
+   .at-pre to collapse them, then .in to animate the grow-in. */
+.at-bar {
+  height: 20px; border-radius: 5px;
+  width: var(--w); transition: width 1.1s cubic-bezier(.22,.61,.36,1);
+}
+.at-chart.at-pre .at-bar { width: 0; }
+.at-chart.at-pre.in .at-bar { width: var(--w); }
+.at-teleop { background: #d8dde5; }
+.at-human { background: var(--accent); }
+.at-val { font-size: .85rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) {
+  .at-bar { transition: none; width: var(--w) !important; }
+}
+
+/* ---------- BIBTEX (plain light block, CrossFormer-style) ---------- */
+#bibtex pre {
+  background-color: #f5f5f5; color: #4a4a4a;
+  font-size: .875em; line-height: 1.6;
+  overflow-x: auto; padding: 1.25rem 1.5rem;
+  white-space: pre; word-wrap: normal; margin: 0;
+  font-family: monospace;
+}
+#bibtex pre code { background: transparent; color: currentColor; font-family: inherit; }
+
+/* ---------- FOOTER ---------- */
+body > .footer { padding: 40px 24px; border-top: 1px solid var(--line); text-align: center; color: var(--ink-faint); background: var(--bg); }
+body > .footer p { margin: 4px 0; font-size: .9rem; }
+
+/* ---------- REVEAL ON SCROLL ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .cards { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  main .section { padding: 56px 0; }
+}
