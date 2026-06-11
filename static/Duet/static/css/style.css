@@ -151,7 +151,7 @@ main .container.narrow { max-width: 760px !important; }
   background: #000; margin-top: 28px;
 }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.caption { color: var(--ink-faint); font-size: .92rem; margin: 14px 0 0; max-width: 70ch; text-align: left; }
+.caption { color: var(--ink-faint); font-size: .92rem; margin: 14px 0 0; max-width: 70ch; }
 .caption strong { color: var(--ink-soft); }
 
 /* ---------- SECTIONS ---------- */
@@ -171,12 +171,19 @@ main .section h3 { font-size: 1.2rem; margin: 44px 0 10px; letter-spacing: -.01e
 .muted { color: var(--ink-soft); }
 .small { font-size: .85rem; }
 
-/* Justified body paragraphs (flush left and right, like Word's
-   "Justify"). Banner, captions, cards, and BibTeX are not affected. */
+/* Justified paragraphs everywhere (flush left and right, like Word's
+   "Justify") — body text, numbered-card blurbs, figure and table
+   captions, footer. Only the banner keeps its centered text. */
+main p,
+.footer p,
 .lead,
 .body-text,
 .prose p,
-main .section > .container > .muted {
+.muted,
+.card p,
+.caption,
+.table-caption,
+.grid-item figcaption {
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
@@ -191,7 +198,7 @@ main .section > .container > .muted {
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .card-num { font-family: var(--serif); font-size: 1.4rem; color: var(--accent); font-weight: 600; }
 .card h3 { margin: 8px 0 6px; font-size: 1.1rem; letter-spacing: -.01em; color: var(--ink); font-weight: 600; }
-.card p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+.card p { margin: 0; color: var(--ink-soft); font-size: .92rem; text-wrap: pretty; }
 
 /* figures (images and looping videos) */
 .figure { margin: 24px 0 0; }
@@ -217,7 +224,7 @@ figcaption strong { color: var(--ink-soft); }
   aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0;
 }
 .grid-item iframe { width: 100%; display: block; aspect-ratio: 16 / 10; border: 0; }
-.grid-item figcaption { padding: 12px 16px; margin: 0; text-align: left; }
+.grid-item figcaption { padding: 12px 16px; margin: 0; }
 
 /* ---------- ACADEMIC TABLES ---------- */
 .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); margin-top: 24px; }
@@ -299,4 +306,11 @@ body > .footer p { margin: 4px 0; font-size: .9rem; }
   .cards { grid-template-columns: 1fr; }
   .grid { grid-template-columns: 1fr; }
   main .section { padding: 56px 0; }
+
+  /* Justified text in a narrow column needs a smaller size, or the
+     word-spacing gaps become distracting */
+  .lead { font-size: 1.04rem; }
+  .body-text, .prose p, .card p, main .section > .container > .muted { font-size: .92rem; }
+  .caption, .table-caption, .grid-item figcaption { font-size: .82rem; }
+  .table-wrap table { font-size: .88rem; }
 }
