@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="DUET: Dual-Robot Understanding via Efficient Teaching">
+  <meta name="keywords" content="Robotics, Dual-robot Collaboration, Learning from Human Demonstrations, Mobile Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    DUET: Dual-Robot Understanding via Efficient Teaching
+  </title>
+
+  <link rel="icon" type="image/svg+xml" href="./static/images/orchestra.svg" />
+  <link rel="apple-touch-icon" href="./static/images/orchestra.svg" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZ38WT2YPD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QZ38WT2YPD');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,18..72,400;0,18..72,500;1,18..72,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <script src="./config.js"></script>
+  <script src="./static/js/load-config.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAV (fixed at the very top) ================= -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">DUET</a>
+    <div class="nav-links">
+      <a href="#video">Video</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#method">Method</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#results">Results</a>
+      <a href="#bibtex">BibTeX</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= BANNER (fullscreen video; text aligned to the content column) ================= -->
+<section class="hero is-link is-fullheight video" id="top" style="overflow: hidden; position:relative;">
+  <div class="hero-video" style="height: 100%; width: 177.77777778vh; min-width: 100%;min-height: 56.25vw;">
+    <video playsinline autoplay muted loop>
+      <source data-src="videos.teaserDesktop" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-video is-hidden-tablet is-inline-block-mobile"
+    style="height: 154.28571428vw; width: 100%; min-width:64.81481481vh;min-height:100%;">
+    <video playsinline autoplay muted loop>
+      <source data-src="videos.teaserMobile" type="video/mp4">
+    </video>
+  </div>
+  <div class="overlay"></div>
+
+  <div class="hero-body">
+    <div class="banner-content">
+      <p class="banner-venue" data-text="text.venue"></p>
+      <h1 class="banner-title" data-text="text.title"></h1>
+      <p class="banner-subtitle" data-text="text.subtitle"></p>
+      <p class="banner-tagline" data-text="text.tagline"></p>
+      <div class="banner-authors" data-authors></div>
+      <div class="banner-affiliations" data-text="text.affiliations"></div>
+      <div class="banner-buttons">
+        <a class="btn" href="#" data-href="links.paperPdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M6 2h8l4 4v16H6z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 2v4h4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          Paper
+        </a>
+        <a class="btn" href="#" data-href="links.arxiv" target="_blank" rel="noopener">
+          <img class="ico" src="./static/images/arxiv.svg" alt="" />
+          arXiv
+        </a>
+        <a class="btn" href="#" data-href="links.video" target="_blank" rel="noopener">
+          <img class="ico" src="./static/images/youtube.svg" alt="" />
+          Video
+        </a>
+        <a class="btn" href="#" data-href="links.code" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" fill="currentColor"/></svg>
+          Code (coming soon)
+        </a>
+        <a class="btn" href="#" data-href="links.dataset" target="_blank" rel="noopener">
+          <span>🤗</span>
+          Dataset (coming soon)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- ================= VIDEO ================= -->
+  <section class="section" id="video">
+    <div class="container">
+      <div class="video-embed" style="margin-top: 0;">
+        <iframe data-src="links.youtubeEmbed" title="DUET Technical Summary Video" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABSTRACT ================= -->
+  <section class="section" id="abstract">
+    <div class="container">
+      <h2>Abstract</h2>
+      <p class="lead">
+        Dual-robot collaboration enables tasks that exceed the reach and payload of a single robot, such as 
+        collaboratively transporting objects across environments and executing coordinated handovers. Data
+        acquisition is the primary bottleneck for training these systems. To this end, we introduce DUET, 
+        a dual-robot learning framework for mobile manipulation. For efficient data collection, we create
+        a unified dual-embodiment synchronized VR-based teleoperation system for in-domain heterogeneous
+        robot data collection. We further develop a complementary tracking pipeline that records human-human
+        coordination and collaborative mobile manipulation priors. To allow efficient learning, we introduce
+        an Action Chunking Transformer based architecture that first pretrains collaborative policies on
+        efficient human-human demonstrations, before finetuning them on a minimal set of real-robot teleoperation
+        trajectories. We develop a benchmark of four collaborative tasks to evaluate our framework using a Unitree
+        G1 humanoid and a Dexmate Vega1 mobile manipulator. The results demonstrate that harnessing human priors not
+        only yields superior task performance compared to baselines trained only on robot data, but also reduces the
+        total human effort required for data collection. Our human data collection pipeline is <em>5.4&times; faster</em> on average
+        than teleoperation, yet we perform equally or better than robot-only data trained
+        policies across all tasks.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= HIGHLIGHTS ================= -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="cards">
+        <div class="card">
+          <div class="card-num">01</div>
+          <h3>The Problem</h3>
+          <p>Collaborative tasks demand tight spatial-temporal coordination between robots, but collecting
+          demonstrations for a heterogeneous robot team requires complex teleoperation setups, multiple operators,
+          and lots of robot time.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <h3>Key Idea</h3>
+          <p>Pretrain one policy on two humans doing the task together with no robot in the loop,
+            then finetune on dual-robot teleoperation data.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <h3>Result</h3>
+          <p>Human data is 5.4&times; faster to collect, and 60 human + 30 robot demonstrations match or beat
+          baselines trained on 50 robot-only demonstrations across four contact-rich collaborative tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= METHOD ================= -->
+  <section class="section" id="method">
+    <div class="container">
+      <h2>Method</h2>
+      <p class="lead">
+        Two data streams, one policy: synchronized VR teleoperation supplies high-fidelity robot data, human-human
+        capture supplies collaborative priors, and a two-stage ACT policy ties them together.
+      </p>
+
+      <h3>Two operators, one robot duo</h3>
+      <figure class="figure">
+        <img data-src="images.teleopPipeline" alt="Teleoperation pipeline" loading="lazy" />
+        <figcaption><strong>The DUET synchronized dual-robot VR teleoperation pipeline.</strong></figcaption>
+      </figure>
+      <figure class="figure">
+        <video autoplay muted loop playsinline>
+          <source data-src="videos.teleoperation" type="video/mp4">
+        </video>
+        <figcaption><strong>Synchronized dual-robot VR teleoperation.</strong></figcaption>
+      </figure>
+      <p class="body-text">Our synchronized VR teleoperation framework lets just two people command the duo: PICO
+      VR interfaces drive the Unitree G1 humanoid through the SONIC whole-body tracking framework, and the Dexmate
+      Vega1 mobile manipulator through General Motion Retargeting (GMR), while both robots stream real-time
+      egocentric video and log synchronized data at 10&nbsp;Hz.</p>
+
+      <h3>Learning from human collaboration</h3>
+      <figure class="figure">
+        <video autoplay muted loop playsinline>
+          <source data-src="videos.humanData" type="video/mp4">
+        </video>
+        <figcaption><strong>Human-human demonstration data collection.</strong></figcaption>
+      </figure>
+      <figure class="figure">
+        <img data-src="images.humanSystemExample" alt="Human-human data collection system" loading="lazy" />
+        <figcaption><strong>Human-human data collection system.</strong> Two operators with head/neck-mounted cameras
+        plus a fixed third-person master view.</figcaption>
+      </figure>
+      <p class="body-text">Teleoperation remains bottlenecked by time, cost, and operator effort. To scale up, two
+      humans simply perform the collaborative task themselves: no robots in the loop. Three cameras record
+      the scene: a head-mounted camera on each operator plus a fixed third-person master view. A tracking pipeline
+      built on YOLO and SAM 3D Body lifts both people into metric-scale 3D, naturally encoding rich, transferable priors about human-human coordination.</p>
+
+      <h3>One policy, two embodiments, two data streams</h3>
+      <p class="body-text">DUET trains a single policy for the whole duo, in two stages that share one
+      architecture but differ in data source. To bridge the embodiment gap, human and robot data are projected
+      into a shared pose space, with all poses expressed in head-relative coordinates for both humans and
+      robots.</p>
+      <p class="body-text"><strong>Stage 1: Pretrain on human collaboration.</strong>
+      The policy backbone learns the tight spatial-temporal coupling of contact-rich collaboration from
+      egocentric RGB streams and 3D keypoints of human-human demonstrations.</p>
+      <p class="body-text"><strong>Stage 2: Finetune on robot data.</strong>
+      The same architecture is then finetuned on a minimal set of dual-robot teleoperation trajectories.</p>
+      <figure class="figure">
+        <img data-src="images.architecture" alt="DUET architecture" loading="lazy" />
+        <figcaption><strong>The DUET architecture.</strong> A shared ACT backbone with parallel decoder heads for
+        the shared pose space and robot-only joint space.</figcaption>
+      </figure>
+      <p class="body-text">Our policy builds on the <strong>Action Chunking Transformer (ACT)</strong>, a
+      transformer-based visuomotor architecture that predicts chunks of future actions. DUET shares one ACT backbone across both
+      embodiments: observations from both robots are tokenized into a common sequence, and two parallel decoder
+      heads output a shared pose component and a robot-only joint-space component. The framework is agnostic to
+      this choice: the backbone can be substituted with alternative visuomotor architectures without
+      changing the data collection pipeline.</p>
+    </div>
+  </section>
+
+  <!-- ================= DATASET ================= -->
+  <section class="section section-tint" id="dataset">
+    <div class="container">
+      <h2>Dataset</h2>
+      <p class="lead">
+        Our benchmark dataset covers four collaborative tasks, each collected through both pipelines,
+        dual-robot teleoperation and human-human demonstration.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Pipeline</th>
+              <th class="num">Total Time (min)</th>
+              <th class="num">Episodes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="2"><strong>T1: Trash Collection</strong></td>
+                <td>Teleoperation</td><td class="num">43.0</td><td class="num">86</td></tr>
+            <tr><td>Human Demonstration</td><td class="num">35.7</td><td class="num">107</td></tr>
+            <tr><td rowspan="2"><strong>T2: Box Organization</strong></td>
+                <td>Teleoperation</td><td class="num">71.0</td><td class="num">71</td></tr>
+            <tr><td>Human Demonstration</td><td class="num">53.3</td><td class="num">80</td></tr>
+            <tr><td rowspan="2"><strong>T3: Board Tilting</strong></td>
+                <td>Teleoperation</td><td class="num">22.0</td><td class="num">66</td></tr>
+            <tr><td>Human Demonstration</td><td class="num">21.5</td><td class="num">99</td></tr>
+            <tr><td rowspan="2"><strong>T4: Doll Passing</strong></td>
+                <td>Teleoperation</td><td class="num">31.5</td><td class="num">63</td></tr>
+            <tr><td>Human Demonstration</td><td class="num">26.3</td><td class="num">79</td></tr>
+            <tr class="highlight"><td rowspan="2"><strong>Total</strong></td>
+                <td><strong>Teleoperation</strong></td><td class="num"><strong>167.5</strong></td><td class="num"><strong>286</strong></td></tr>
+            <tr class="highlight"><td><strong>Human Demonstration</strong></td><td class="num"><strong>136.8</strong></td><td class="num"><strong>365</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption"><strong>Total data span and number of episodes</strong> per pipeline across the
+      four benchmark tasks.</p>
+
+      <div class="at-chart" id="at-chart">
+        <div class="at-legend">
+          <span><i class="at-swatch at-swatch-teleop"></i>Teleoperation</span>
+          <span><i class="at-swatch at-swatch-human"></i>Human Demonstration</span>
+        </div>
+
+        <div class="at-group">
+          <div class="at-group-head"><span class="at-task">T1: Trash Collection</span><span class="at-speedup">8.1&times; faster</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-teleop" style="--w: 100%;"></div></div><span class="at-val">322.1 s</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-human" style="--w: 12.4%;"></div></div><span class="at-val">39.9 s</span></div>
+        </div>
+
+        <div class="at-group">
+          <div class="at-group-head"><span class="at-task">T2: Box Organization</span><span class="at-speedup">4.4&times; faster</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-teleop" style="--w: 88.2%;"></div></div><span class="at-val">284.2 s</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-human" style="--w: 20%;"></div></div><span class="at-val">64.4 s</span></div>
+        </div>
+
+        <div class="at-group">
+          <div class="at-group-head"><span class="at-task">T3: Board Tilting</span><span class="at-speedup">6.1&times; faster</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-teleop" style="--w: 52.1%;"></div></div><span class="at-val">167.9 s</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-human" style="--w: 8.6%;"></div></div><span class="at-val">27.7 s</span></div>
+        </div>
+
+        <div class="at-group">
+          <div class="at-group-head"><span class="at-task">T4: Doll Passing</span><span class="at-speedup">3.8&times; faster</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-teleop" style="--w: 43.2%;"></div></div><span class="at-val">139.2 s</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-human" style="--w: 11.4%;"></div></div><span class="at-val">36.6 s</span></div>
+        </div>
+
+        <div class="at-group at-average">
+          <div class="at-group-head"><span class="at-task">Average</span><span class="at-speedup">5.4&times; faster</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-teleop" style="--w: 70.9%;"></div></div><span class="at-val">228.4 s</span></div>
+          <div class="at-row"><div class="at-track"><div class="at-bar at-human" style="--w: 13.1%;"></div></div><span class="at-val">42.2 s</span></div>
+        </div>
+      </div>
+      <p class="table-caption"><strong>Amortized collection time (seconds per successful trajectory).</strong>
+      Direct human demonstration provides a 5.4&times; acceleration on average over our optimized dual-robot
+      teleoperation pipeline.</p>
+    </div>
+  </section>
+
+  <!-- ================= RESULTS ================= -->
+  <section class="section" id="results">
+    <div class="container">
+      <h2>Results</h2>
+      <p class="body-text">
+        Our heterogeneous duo pairs a Unitree G1 humanoid with a Dexmate Vega1 mobile manipulator, evaluated on
+        four contact-rich collaborative tasks. Each policy is evaluated over <strong>10 independent hardware
+        trials per task</strong>, and every trial is scored from 0.0 to 1.0 through two sequential milestones
+        worth 0.5 points each (e.g., for Doll Passing: the initial grasp by Vega1, then the dual-robot handover).
+        <strong>Points</strong> are the cumulative score over the 10 trials (out of a maximum of 10), capturing
+        partial progress; the <strong>success rate</strong> counts only trials where all milestones are completed.
+        Across all four tasks, pretraining on 60 human demonstrations and finetuning on just 30 robot trajectories
+        achieves equal or better points and success rates than baselines trained on 50 robot-only demonstrations, while requiring less total data collection effort. Qualitatively, the human-pretrained policy
+        executes more smoothly and adheres better to object affordance priors implicitly captured during human
+        data collection.
+      </p>
+
+      <figure class="figure">
+        <img data-src="images.pointsSuccessRate" alt="Points and success rates across tasks" loading="lazy" />
+        <figcaption><strong>Points and success rates</strong> across the four collaborative tasks, over 10
+        hardware trials per task.</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th class="num">T1 Trash Collection</th>
+              <th class="num">T2 Box Organization</th>
+              <th class="num">T3 Board Tilting</th>
+              <th class="num">T4 Doll Passing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td><strong>DUET (Ours)</strong></td>
+              <td class="num"><strong>200.95</strong></td><td class="num"><strong>206.50</strong></td><td class="num"><strong>111.65</strong></td><td class="num"><strong>106.20</strong></td>
+            </tr>
+            <tr>
+              <td>Robot-only (50)</td>
+              <td class="num">268.42</td><td class="num">236.83</td><td class="num">139.92</td><td class="num">116.00</td>
+            </tr>
+            <tr>
+              <td>Robot-only (30)</td>
+              <td class="num">161.05</td><td class="num">142.10</td><td class="num">83.95</td><td class="num">69.60</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption"><strong>Data collection effort in minutes.</strong> Effort is the total time
+      expected to collect each policy's training dataset &mdash; the number of human and robot demonstrations
+      used, each weighted by its amortized collection time. DUET achieves better performance while requiring
+      less collection effort than policies trained on 50 robot-only demonstrations.</p>
+
+      <div class="grid">
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source data-src="videos.taskTrashCollection" type="video/mp4">
+          </video>
+          <figcaption><strong>Trash Collection.</strong> Asymmetric spatial-temporal coordination.</figcaption>
+        </figure>
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source data-src="videos.taskBoxOrganization" type="video/mp4">
+          </video>
+          <figcaption><strong>Box Organization.</strong> Collaborative vision and long-horizon execution.</figcaption>
+        </figure>
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source data-src="videos.taskBoardTilting" type="video/mp4">
+          </video>
+          <figcaption><strong>Board Tilting.</strong> Collaborative manipulation and collective balance.</figcaption>
+        </figure>
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source data-src="videos.taskDollPassing" type="video/mp4">
+          </video>
+          <figcaption><strong>Doll Passing.</strong> Coordinated handovers and grasp transfer.</figcaption>
+        </figure>
+      </div>
+      <h3>Zero-shot generalizability</h3>
+      <div class="grid">
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source data-src="videos.generalizationT2" type="video/mp4">
+          </video>
+          <figcaption><strong>T2 Box Organization, out-of-distribution.</strong> The standard boxes are replaced
+          with a black foam box and a green-and-black box, altering visual cues and physical dynamics.</figcaption>
+        </figure>
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source data-src="videos.generalizationT3" type="video/mp4">
+          </video>
+          <figcaption><strong>T3 Board Tilting, out-of-distribution.</strong> The white board is entirely covered
+          by a black cover, drastically shifting the visual background.</figcaption>
+        </figure>
+      </div>
+      <p class="body-text">To evaluate robustness, we test DUET under out-of-distribution conditions with no
+      additional training. Despite these severe variations, the framework successfully adapts and coordinates
+      the duo to complete the task zero-shot.</p>
+    </div>
+  </section>
+
+  <!-- ================= BIBTEX (CrossFormer-style plain block) ================= -->
+  <section class="section" id="bibtex">
+    <div class="container">
+      <h2>BibTeX</h2>
+      <pre><code data-text="text.bibtex"></code></pre>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>
+      Website template modified from <a href="https://nerfies.github.io/">NeRFies</a>, <a
+        href="https://umi-on-legs.github.io/">UMI on Legs</a>, and <a
+        href="https://crossformer-model.github.io/">CrossFormer</a>.
+    </p>
+    <p class="muted small">
+      This website is licensed under a <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+        International License</a>.
+    </p>
+  </div>
+</footer>
+
+<script src="./static/js/script.js"></script>
+
+</body>
+
+</html>
