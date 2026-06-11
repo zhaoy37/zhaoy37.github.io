@@ -1,8 +1,5 @@
 /* ============================================================
    DUET — content sections below the banner.
-   Adapted from the AutoMerge template (polished, responsive,
-   single accent color). The fullscreen video banner keeps its
-   own Bulma styling — nothing in this file targets it.
    ============================================================ */
 
 :root {
@@ -17,7 +14,7 @@
   --accent-bg: #eef2ff;
   --radius:    14px;
   --radius-sm: 9px;
-  --maxw:      1000px;  /* content column width below the banner */
+  --maxw:      1060px;  /* content column width below the banner */
   --shadow:    0 1px 2px rgba(20,24,29,.04), 0 8px 30px rgba(20,24,29,.07);
   --shadow-lg: 0 4px 12px rgba(20,24,29,.08), 0 24px 60px rgba(20,24,29,.12);
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
@@ -37,6 +34,15 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+/* Backdrop behind the banner teaser: never show Bulma's blue while the
+   video loads or if it doesn't cover an unusual viewport ratio */
+.hero.video.is-link { background-color: #161616; }
+
+/* Our banner content is taller than one phone screen, which stretches the
+   teaser element past the video's aspect ratio; without this the browser
+   letterboxes the mismatch with black bars above and below the video */
+.hero-video video { object-fit: cover; }
 
 /* !important needed: Bulma's responsive .container:not(...):not(...)
    rules have higher specificity and would force 1152/1344px */

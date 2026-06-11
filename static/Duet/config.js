@@ -60,9 +60,9 @@ window.SITE_CONFIG = {
     // --- Fullscreen hero background (top of page) ---------------
     // Landscape version (desktop / tablet). NOTE: a local .mp4 looks
     // best here (YouTube embeds show branding); YouTube still works.
-    teaserDesktop: "./static/videos/teaser-small.mp4",
-    // Portrait version (phones)
-    teaserMobile: "./static/videos/teaser-mobile-small.mp4",
+    teaserDesktop: "./static/videos/teaser_small.mp4",
+    // Portrait version (phones), 700x1080 like umi-on-legs
+    teaserMobile: "./static/videos/teaser_mobile_small.mp4",
 
     // --- Method section figures (local .mp4 loops) ---------------
     // Drop the files into ./static/videos/ with these names (or
