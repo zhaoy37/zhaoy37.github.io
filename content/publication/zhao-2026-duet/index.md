@@ -62,7 +62,7 @@ image:
 
 <center>
 
-![DUET human-data training pipeline](featured.svg)
+![DUET human-data training pipeline](featured.png)
 <small>DUET</small>
 
 </center>
