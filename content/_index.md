@@ -30,6 +30,22 @@ sections:
           size: cover
           position: center
           parallax: false
+  - block: experience
+    id: experience
+    content:
+      username: admin
+      title: Experience
+    design:
+      spacing:
+        padding: ['2rem', 0, '2rem', 0]
+  - block: resume-awards
+    id: awards
+    content:
+      username: admin
+      title: Awards
+    design:
+      spacing:
+        padding: ['2rem', 0, '2rem', 0]
   - block: collection
     id: papers
     content:

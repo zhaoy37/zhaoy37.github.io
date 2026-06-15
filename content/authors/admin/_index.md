@@ -53,6 +53,58 @@ education:
   - area: BSc, magna cum laude, Honors in Computer Science
     institution: Vanderbilt University
 
+work:
+  - position: Research Assistant
+    company_name: University of Southern California
+    date_start: 2024-08-01
+    date_end: ''
+    summary: |
+      PhD research and assistantship in my advisors' research (2024/08 – 2025/05, 2025/08 – 2025/12, 2026/05 – Present). My research focuses on robotics and cyber-physical systems, especially multi-robot system design and verification.
+  - position: Teaching Assistant, CSCI 577A (Software Engineering)
+    company_name: University of Southern California
+    date_start: 2026-01-01
+    date_end: 2026-05-01
+    summary: |
+      Graded students' homework and exams. Supervisors: Jae Young Bang, Mahdi Eslamimehr.
+  - position: Research and Development Intern
+    company_name: Toyota Research Institute of North America
+    date_start: 2025-05-01
+    date_end: 2025-08-01
+    summary: |
+      Worked on cyber-physical systems research at the Future Research Department. Supervisors: Georgios Fainekos, Bardh Hoxha.
+  - position: Grader, CS 4260 (Artificial Intelligence)
+    company_name: Vanderbilt University
+    date_start: 2022-08-01
+    date_end: 2023-05-01
+    summary: |
+      Graded students' homework and exams and held TA office hours regularly. Supervisors: Meiyi Ma, Daniel Moyer.
+  - position: Application Development Intern
+    company_name: ADP
+    date_start: 2022-06-01
+    date_end: 2022-08-01
+    summary: |
+      Full stack API development for the Autopay Group within the Global Product & Tech group. Supervisor: Jim Farber.
+
+awards:
+  - title: ICCPS Best Paper Award Finalist
+    awarder: 15th ACM/IEEE International Conference on Cyber-Physical Systems
+    date: 2024-05-01
+    date_start: 2024-05-01
+    summary: |
+      Awarded for the paper "Robust Conformal Prediction for STL Runtime Verification under Distribution Shift".
+  - title: Viterbi School of Engineering Fellowship
+    awarder: Viterbi School of Engineering, USC
+    date: 2023-08-01
+    date_start: 2023-08-01
+    summary: |
+      Awarded to selected incoming PhD students at the Viterbi School of Engineering, USC.
+  - title: VISE Award (Vanderbilt Institute for Surgery and Engineering Summer Fellowship)
+    awarder: Vanderbilt Institute for Surgery and Engineering
+    date: 2021-06-01
+    date_start: 2021-06-01
+    summary: |
+      Awarded for the paid fellowship at the Vanderbilt Institute for Surgery and Engineering Summer Fellows Program.
+
 ---
 
 ## About Me
