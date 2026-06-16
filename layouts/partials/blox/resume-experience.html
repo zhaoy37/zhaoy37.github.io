@@ -27,8 +27,8 @@
     {{ range $idx, $key := $person.work }}
     {{ $logo := "" }}
     {{ with .company_logo }}{{ $logo = resources.Get (path.Join "media" .) }}{{ end }}
-    <li class="mb-10" style="margin-inline-start: 4rem;">
-        <span class="absolute flex items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 overflow-hidden {{ if $logo }}bg-white{{ else }}bg-primary-100 dark:bg-primary-900{{ end }}" style="width: 3.5rem; height: 3.5rem; inset-inline-start: -1.75rem;">
+    <li class="mb-10" style="margin-inline-start: 5rem;">
+        <span class="absolute flex items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900 overflow-hidden {{ if $logo }}bg-white{{ else }}bg-primary-100 dark:bg-primary-900{{ end }}" style="width: 4.5rem; height: 4.5rem; inset-inline-start: -2.25rem;">
             {{ if $logo }}
             <img src="{{ $logo.RelPermalink }}" alt="{{ .company_name }} logo" class="w-full h-full object-contain" style="padding: 0.3rem;" loading="lazy" />
             {{ else }}
