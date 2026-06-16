@@ -56,30 +56,35 @@ education:
 work:
   - position: Research Assistant
     company_name: University of Southern California
+    company_logo: usc.png
     date_start: 2024-08-01
     date_end: ''
     summary: |
       PhD research and assistantship in my advisors' research (2024/08 – 2025/05, 2025/08 – 2025/12, 2026/05 – Present). My research focuses on robotics and cyber-physical systems, especially multi-robot system design and verification.
   - position: Teaching Assistant, CSCI 577A (Software Engineering)
     company_name: University of Southern California
+    company_logo: usc.png
     date_start: 2026-01-01
     date_end: 2026-05-01
     summary: |
       Graded students' homework and exams. Supervisors: Jae Young Bang, Mahdi Eslamimehr.
   - position: Research and Development Intern
     company_name: Toyota Research Institute of North America
+    company_logo: toyota.png
     date_start: 2025-05-01
     date_end: 2025-08-01
     summary: |
       Worked on cyber-physical systems research at the Future Research Department. Supervisors: Georgios Fainekos, Bardh Hoxha.
   - position: Grader, CS 4260 (Artificial Intelligence)
     company_name: Vanderbilt University
+    company_logo: vanderbilt.png
     date_start: 2022-08-01
     date_end: 2023-05-01
     summary: |
       Graded students' homework and exams and held TA office hours regularly. Supervisors: Meiyi Ma, Daniel Moyer.
   - position: Application Development Intern
     company_name: ADP
+    company_logo: adp.png
     date_start: 2022-06-01
     date_end: 2022-08-01
     summary: |
