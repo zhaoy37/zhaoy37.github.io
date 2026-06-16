@@ -1,0 +1,15 @@
+# Hugo build output
+/public/
+/resources/
+.hugo_build.lock
+hugo_stats.json
+
+# Hugo Modules (regenerated on build)
+go.sum
+
+# Dependencies
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
