@@ -98,7 +98,7 @@ window.SITE_CONFIG = {
 
   links: {
     // "Paper" button (local PDF in ./static/)
-    paperPdf: "https://zhaoy37.github.io/Duet/",
+    paperPdf: "https://zhaoy37.github.io/publication/zhao-2026-duet/DUET.pdf",
     // "arXiv" button — replace with your arXiv URL, or "" to hide
     arxiv: "https://zhaoy37.github.io/Duet/",
     // "Video" button — your main YouTube video, or "" to hide
