@@ -43,7 +43,7 @@ links:
 - name: Project Page
   url: /Duet/
 
-url_pdf: ''
+url_pdf: 'DUET.pdf'
 url_code: ''
 url_dataset: ''
 url_poster: ''
