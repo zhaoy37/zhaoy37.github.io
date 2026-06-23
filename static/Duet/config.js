@@ -102,7 +102,7 @@ window.SITE_CONFIG = {
     // "arXiv" button — replace with your arXiv URL, or "" to hide
     arxiv: "https://arxiv.org/abs/2606.20990",
     // "Video" button — your main YouTube video, or "" to hide
-    video: "https://youtu.be/C8L5iuofVPo",
+    video: "https://www.youtube.com/watch?v=zP8hsHgZ4Qg&feature=youtu.be",
     // Embedded player in the "Technical Summary Video" section
     // (any YouTube format works — it is converted automatically)
     youtubeEmbed: "https://www.youtube.com/watch?v=zP8hsHgZ4Qg&feature=youtu.be",
