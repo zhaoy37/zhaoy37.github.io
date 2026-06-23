@@ -50,7 +50,7 @@ url_poster: ''
 url_project: '/Duet/'
 url_slides: ''
 url_source: ''
-url_video: 'https://youtu.be/C8L5iuofVPo'
+url_video: 'https://www.youtube.com/watch?v=zP8hsHgZ4Qg&feature=youtu.be'
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

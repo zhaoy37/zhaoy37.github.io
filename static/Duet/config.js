@@ -105,7 +105,7 @@ window.SITE_CONFIG = {
     video: "https://youtu.be/C8L5iuofVPo",
     // Embedded player in the "Technical Summary Video" section
     // (any YouTube format works — it is converted automatically)
-    youtubeEmbed: "https://youtu.be/C8L5iuofVPo",
+    youtubeEmbed: "https://www.youtube.com/watch?v=zP8hsHgZ4Qg&feature=youtu.be",
     // "Code" buttons — your GitHub repo, or "" to hide
     code: "https://zhaoy37.github.io/Duet/",
     // "🤗 Dataset" button — your Hugging Face dataset, or "" to hide
