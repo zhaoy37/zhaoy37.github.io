@@ -43,7 +43,7 @@ links:
 - name: Project Page
   url: /Duet/
 
-url_pdf: 'publication/zhao-2026-duet/DUET.pdf'
+url_pdf: 'https://arxiv.org/pdf/2606.20990'
 url_code: ''
 url_dataset: ''
 url_poster: ''

@@ -31,7 +31,7 @@ window.SITE_CONFIG = {
     bibtex: `@article{zhao2026duet,
   title   = {DUET: Dual-Robot Understanding via Efficient Teaching},
   author  = {Yiqi Zhao and Ruohai Ge and Celina Shiyu Wang and Junjie Ye and Muchen Xu and Minhao Li and Sergey Zakharov and Basile Van Hoorick and Vitor Campagnolo Guizilini and Leonidas Guibas and Gaurav S. Sukhatme and Jyotirmoy V. Deshmukh and Yue Wang},
-  journal = {arXiv preprint arXiv:YOUR_ARXIV_ID},
+  journal = {arXiv preprint arXiv:2606.20990},
   year    = {2026}
 }`,
   },
@@ -98,9 +98,9 @@ window.SITE_CONFIG = {
 
   links: {
     // "Paper" button (local PDF in ./static/)
-    paperPdf: "https://zhaoy37.github.io/publication/zhao-2026-duet/DUET.pdf",
+    paperPdf: "https://arxiv.org/pdf/2606.20990",
     // "arXiv" button — replace with your arXiv URL, or "" to hide
-    arxiv: "https://zhaoy37.github.io/Duet/",
+    arxiv: "https://arxiv.org/abs/2606.20990",
     // "Video" button — your main YouTube video, or "" to hide
     video: "https://youtu.be/C8L5iuofVPo",
     // Embedded player in the "Technical Summary Video" section
