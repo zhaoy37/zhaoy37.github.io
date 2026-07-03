@@ -39,7 +39,7 @@ sections:
           - publication
         featured_only: true
     design:
-      view: compact
+      view: card
       columns: 1
   - block: collection
     content:
@@ -59,18 +59,13 @@ sections:
     design:
       spacing:
         padding: ['2rem', 0, '2rem', 0]
-  - block: markdown
+  - block: resume-awards
     id: awards
     content:
+      username: admin
       title: Awards
-      text: |
-        - **ICCPS Best Paper Award Finalist** — 15th ACM/IEEE International Conference on Cyber-Physical Systems, May 2024.
-          Awarded for the paper "Robust Conformal Prediction for STL Runtime Verification under Distribution Shift".
-        - **Viterbi School of Engineering Fellowship** — Viterbi School of Engineering, USC, August 2023.
-          Awarded to selected incoming PhD students at the Viterbi School of Engineering, USC.
-        - **VISE Award (Vanderbilt Institute for Surgery and Engineering Summer Fellowship)** — Vanderbilt Institute for Surgery and Engineering, 2021.
-          Awarded for the paid fellowship at the Vanderbilt Institute for Surgery and Engineering Summer Fellows Program.
     design:
+      date_format: '2006'
       spacing:
         padding: ['2rem', 0, '2rem', 0]
 ---

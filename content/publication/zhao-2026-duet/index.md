@@ -58,6 +58,9 @@ image:
   caption: ""
   focal_point: ''
   preview_only: true
+
+# Video clip shown instead of the featured image on homepage cards
+video_preview: /Duet/static/videos/teaser_small.mp4
 ---
 
 <center>

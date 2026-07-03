@@ -1,0 +1,45 @@
+{{ $item := .item }}
+
+{{ $link := $item.RelPermalink }}
+{{ $target := "" }}
+{{ if $item.Params.external_link }}
+  {{ $link = $item.Params.external_link }}
+  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+{{ end }}
+
+{{ $resource := partial "functions/get_featured_image.html" $item }}
+
+{{/* Optional video preview: set `video_preview` in front matter to a page resource
+     (e.g. `preview.mp4`) or a site-absolute path (e.g. `/Duet/static/videos/teaser.mp4`). */}}
+{{ $video := "" }}
+{{ with $item.Params.video_preview }}
+  {{ $res := $item.Resources.GetMatch . }}
+  {{ if $res }}{{ $video = $res.RelPermalink }}{{ else }}{{ $video = . | relURL }}{{ end }}
+{{ end }}
+
+<a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="mb-5">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0 overflow-hidden">
+      {{ if $video }}
+      <video class="h-48 w-auto max-w-full md:max-w-xs object-contain" autoplay loop muted playsinline preload="metadata" src="{{ $video }}"></video>
+      {{ else }}
+      {{ with $resource }}
+        {{ $image := .Fit "655x655" }}
+        {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+      <img class="h-48 w-auto max-w-full md:max-w-xs object-contain" loading="lazy" src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}" alt="{{ $item.Title | plainify }}">
+      {{ end }}
+      {{ end }}
+    </div>
+    <div class="p-8">
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">{{ $item.Title }}</div>
+      {{ with $item.Params.summary }}
+      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
+        {{ . | plainify | htmlUnescape | chomp -}}
+      </p>
+      {{ end }}
+      <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">
+        {{- $item.Date | time.Format (site.Params.locale.date_format | default ":date_long") -}}
+      </p>
+    </div>
+  </div>
+</a>

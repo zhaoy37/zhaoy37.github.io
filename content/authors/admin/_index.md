@@ -69,6 +69,26 @@ work:
     summary: |
       Full stack API development for the Autopay Group within the Global Product & Tech group. Supervisor: Jim Farber.
 
+awards:
+  - title: ICCPS Best Paper Award Finalist
+    awarder: 15th ACM/IEEE International Conference on Cyber-Physical Systems
+    date: 2024-05-01
+    date_start: 2024-05-01
+    summary: |
+      Awarded for the paper "Robust Conformal Prediction for STL Runtime Verification under Distribution Shift".
+  - title: Viterbi School of Engineering Fellowship
+    awarder: Viterbi School of Engineering, USC
+    date: 2023-08-01
+    date_start: 2023-08-01
+    summary: |
+      Awarded to selected incoming PhD students at the Viterbi School of Engineering, USC.
+  - title: VISE Award (Vanderbilt Institute for Surgery and Engineering Summer Fellowship)
+    awarder: Vanderbilt Institute for Surgery and Engineering
+    date: 2021-01-01
+    date_start: 2021-01-01
+    summary: |
+      Awarded for the paid fellowship at the Vanderbilt Institute for Surgery and Engineering Summer Fellows Program.
+
 ---
 
 ## About Me
