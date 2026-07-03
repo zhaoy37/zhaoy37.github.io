@@ -1,0 +1,46 @@
+<style>
+  /* Featured publication cards: fixed-width list, media contained (not cropped) */
+  .pub-card-list {
+    width: 100%;
+    max-width: 56rem;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pub-card-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+  }
+  .pub-card-row > * {
+    min-width: 0;
+  }
+  .pub-card-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  .pub-card-media img,
+  .pub-card-media video {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  @media (min-width: 768px) {
+    .pub-card-row {
+      flex-direction: row;
+      align-items: center;
+    }
+    .pub-card-media {
+      width: 18rem;
+    }
+  }
+</style>
