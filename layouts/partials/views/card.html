@@ -32,6 +32,9 @@
     </div>
     <div class="p-8">
       <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">{{ $item.Title }}</div>
+      <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 article-metadata li-cite-author">
+        {{ partial "page_metadata_authors" $item }}
+      </p>
       {{ with $item.Params.summary }}
       <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
         {{ . | plainify | htmlUnescape | chomp -}}
