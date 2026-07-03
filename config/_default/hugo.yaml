@@ -21,6 +21,10 @@ removePathAccents: true
 ## ADVANCED
 ############################
 
+# Preserve capitalization of taxonomy terms (e.g. author names like "Jyotirmoy V. Deshmukh");
+# the default AP title-case style lowercases a lone "V." as if it were the versus abbreviation.
+capitalizeListTitles: false
+
 build:
   writeStats: true
 enableGitInfo: false
