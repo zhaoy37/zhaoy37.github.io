@@ -28,7 +28,7 @@ abstract: We present recent advances in formal verification and control for auto
 summary: IEEE Control Systems.
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:

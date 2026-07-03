@@ -27,7 +27,7 @@ abstract: We propose conformal predictive programming (CPP), a framework to solv
 summary: Currently under review in Automatica.
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:
