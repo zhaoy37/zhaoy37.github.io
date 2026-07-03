@@ -11,6 +11,11 @@ authors:
 - Jyotirmoy V. Deshmukh
 - Lars Lindemann
 
+# First two authors contributed equally
+author_notes:
+- 'Equal Contribution'
+- 'Equal Contribution'
+
 date: '2025-05-05'
 doi: ''
 

@@ -19,6 +19,11 @@ authors:
 - Jyotirmoy V. Deshmukh
 - Yue Wang
 
+# First two authors contributed equally
+author_notes:
+- 'Equal Contribution'
+- 'Equal Contribution'
+
 date: '2026-06-14'
 doi: ''
 
