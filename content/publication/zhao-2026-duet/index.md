@@ -44,15 +44,15 @@ summary:
 featured: true
 
 # Custom links (uncomment lines below)
-# links:
-# - name: Custom Link
-#   url: http://example.org
+links:
+- name: Project
+  url: /Duet/
 
 url_pdf: 'https://arxiv.org/pdf/2606.20990'
 url_code: ''
 url_dataset: ''
 url_poster: ''
-url_project: '/Duet/'
+url_project: ''
 url_slides: ''
 url_source: ''
 url_video: 'https://www.youtube.com/watch?v=zP8hsHgZ4Qg&feature=youtu.be'
