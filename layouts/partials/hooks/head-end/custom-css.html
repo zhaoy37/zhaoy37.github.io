@@ -1,11 +1,18 @@
 <style>
   /* Featured publication cards: fixed-width list, media contained (not cropped) */
   .pub-card-list {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 56rem;
     min-width: 0;
     margin-left: auto;
     margin-right: auto;
+  }
+  /* Each card is an <a>; block it so the cards stack instead of flowing inline. */
+  .pub-card-list > a {
+    display: block;
+    width: 100%;
   }
   .pub-card-row {
     display: flex;
@@ -14,6 +21,11 @@
     min-width: 0;
   }
   .pub-card-row > * {
+    min-width: 0;
+  }
+  /* Text column fills the space left of the fixed-width media (no overlap). */
+  .pub-card-row > .p-8 {
+    flex: 1 1 0%;
     min-width: 0;
   }
   .pub-card-media {
@@ -45,26 +57,24 @@
   }
 
   /* Clickable author names linking to homepages (junjieye.com style):
-     body-color text, semibold, subtle underline, opens in new tab. */
+     blend in with the surrounding author text — same color, no bold, no
+     underline — and only reveal an underline + slight darkening on hover. */
   .li-cite-author a.author-link,
   .article-metadata a.author-link {
-    color: #222;
-    font-weight: 600;
-    border-bottom: 1px solid #ddd;
+    color: inherit;
+    font-weight: inherit;
     text-decoration: none;
-    transition: border-color 0.15s ease;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
   }
   .li-cite-author a.author-link:hover,
   .article-metadata a.author-link:hover {
+    color: #555;
     border-bottom-color: #999;
-  }
-  html.dark .li-cite-author a.author-link,
-  html.dark .article-metadata a.author-link {
-    color: #e5e7eb;
-    border-bottom-color: rgba(255, 255, 255, 0.25);
   }
   html.dark .li-cite-author a.author-link:hover,
   html.dark .article-metadata a.author-link:hover {
-    border-bottom-color: rgba(255, 255, 255, 0.55);
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.5);
   }
 </style>
