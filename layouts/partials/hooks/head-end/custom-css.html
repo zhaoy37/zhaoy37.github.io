@@ -9,10 +9,21 @@
     margin-left: auto;
     margin-right: auto;
   }
-  /* Each card is an <a>; block it so the cards stack instead of flowing inline. */
-  .pub-card-list > a {
-    display: block;
+  /* Each card is a block that fills the list width and stacks vertically. */
+  .pub-card-list > .pub-card {
     width: 100%;
+  }
+  /* Media link is transparent to layout so the image/video sizes as before. */
+  .pub-card-media > a {
+    display: contents;
+  }
+  /* Attachment button row (PDF, Cite, Video, …) below each card's text. */
+  .pub-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.9rem;
+    margin-top: 0.85rem;
   }
   .pub-card-row {
     display: flex;

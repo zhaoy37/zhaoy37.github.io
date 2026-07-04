@@ -17,9 +17,12 @@
   {{ if $res }}{{ $video = $res.RelPermalink }}{{ else }}{{ $video = . | relURL }}{{ end }}
 {{ end }}
 
-<a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="mb-5">
+{{/* Card is a <div> (not one big <a>) so the attachment buttons below can be
+     their own links without nesting anchors. Title + thumbnail are the links. */}}
+<div class="pub-card mb-5">
   <div class="pub-card-row">
     <div class="pub-card-media">
+      <a href="{{ $link }}" {{ $target | safeHTMLAttr }} aria-label="{{ $item.Title | plainify }}">
       {{ if $video }}
       <video autoplay loop muted playsinline preload="metadata" src="{{ $video }}"></video>
       {{ else }}
@@ -29,9 +32,12 @@
       <img loading="lazy" src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}" alt="{{ $item.Title | plainify }}">
       {{ end }}
       {{ end }}
+      </a>
     </div>
     <div class="p-8">
-      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">{{ $item.Title }}</div>
+      <div class="uppercase tracking-wide text-md text-primary-700 dark:text-primary-200 font-semibold">
+        <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="hover:underline">{{ $item.Title }}</a>
+      </div>
       <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 article-metadata li-cite-author">
         {{ partial "page_metadata_authors" $item }}
       </p>
@@ -43,6 +49,10 @@
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">
         {{- $item.Date | time.Format (site.Params.locale.date_format | default ":date_long") -}}
       </p>
+      {{/* Attachment buttons (PDF, Cite, Code, Video, Project, …) from front matter. */}}
+      <div class="pub-card-links">
+        {{ partial "page_links.html" (dict "page" $item "is_list" true) }}
+      </div>
     </div>
   </div>
-</a>
+</div>
