@@ -44,9 +44,9 @@ summary:
 featured: true
 
 # Custom links (uncomment lines below)
-links:
-- name: Project Page
-  url: /Duet/
+# links:
+# - name: Custom Link
+#   url: http://example.org
 
 url_pdf: 'https://arxiv.org/pdf/2606.20990'
 url_code: ''
