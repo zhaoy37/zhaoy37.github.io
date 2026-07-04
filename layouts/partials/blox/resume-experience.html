@@ -21,7 +21,7 @@
 
 {{ if $person.work }}
 <div class="w-full">
-  <h3 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">{{ $block.content.title | default (i18n "experience" | default "Experience") }}</h3>
+  <h3 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white text-center">{{ $block.content.title | default (i18n "experience" | default "Experience") }}</h3>
   {{ with $block.content.text }}<p class="mb-6 text-base text-gray-500 dark:text-gray-300">{{ . | $page.RenderString }}</p>{{ end }}
   <ol class="relative border-s border-gray-200 dark:border-gray-700">
     {{ range $idx, $key := $person.work }}
