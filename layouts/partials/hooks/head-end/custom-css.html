@@ -43,4 +43,28 @@
       width: 24rem;
     }
   }
+
+  /* Clickable author names linking to homepages (junjieye.com style):
+     body-color text, semibold, subtle underline, opens in new tab. */
+  .li-cite-author a.author-link,
+  .article-metadata a.author-link {
+    color: #222;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  .li-cite-author a.author-link:hover,
+  .article-metadata a.author-link:hover {
+    border-bottom-color: #999;
+  }
+  html.dark .li-cite-author a.author-link,
+  html.dark .article-metadata a.author-link {
+    color: #e5e7eb;
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+  }
+  html.dark .li-cite-author a.author-link:hover,
+  html.dark .article-metadata a.author-link:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.55);
+  }
 </style>

@@ -7,10 +7,14 @@
     {{- $highlight_name := .Page.Params.highlight_name | default false -}}
 
     {{- if gt $index 0 }}, {{ end -}}
+    {{- /* External homepage link from data/author_homepages.yaml (keyed by display name). */ -}}
+    {{- $homepage := index (site.Data.author_homepages | default dict) .LinkTitle -}}
     <span {{ if $highlight_name }}class="font-bold"{{end}}>
       {{/* Effectively check the page's `_build` option as `_build` is not exposed in Hugo's Page object. */}}
       {{- if .RelPermalink -}}
         <a href="{{.RelPermalink}}">{{.LinkTitle}}</a>
+      {{- else if $homepage -}}
+        <a class="author-link" href="{{ $homepage }}" target="_blank" rel="noopener">{{.LinkTitle}}</a>
       {{- else -}}
         {{ .LinkTitle }}
       {{- end -}}

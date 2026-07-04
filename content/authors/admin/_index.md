@@ -27,6 +27,8 @@ organizations:
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
+  - icon: envelope
+    url: 'mailto:yiqizhao@usc.edu'
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=kim0L6QAAAAJ&hl=en
   - icon: academicons/researchgate

@@ -1,0 +1,31 @@
+# Maps a co-author's display name (exactly as written in each publication's
+# front matter `authors:` list) to their homepage URL. Names listed here become
+# clickable links wherever they appear as an author.
+#
+# Your own name ("admin") is intentionally omitted — it already links to your
+# profile page. Add a line only for authors whose homepage you want to link.
+#
+# Example:
+#   "Emily Zhu": "https://example.com"
+
+"Ruohai Ge": "https://gelev97.github.io/"
+"Celina Shiyu Wang": "https://www.linkedin.com/in/celina-wang-4032562ba/"
+"Junjie Ye": "https://junjieye.com/"
+"Sergey Zakharov": "https://zakharos.github.io/"
+"Basile Van Hoorick": "https://basile.be/"
+"Vitor Campagnolo Guizilini": "https://vitorguizilini.github.io/"
+"Leonidas Guibas": "https://geometry.stanford.edu/?member=guibas"
+"Gaurav S. Sukhatme": "https://uscresl.org/principal-investigator/"
+"Jyotirmoy V. Deshmukh": "https://jdeshmukh.github.io/index.html"
+"Yue Wang": "https://yuewang.xyz/"
+"Ayan Mukhopadhyay": "https://www.ayanmukhopadhyay.com/"
+"Bardh Hoxha": "https://www.bhoxha.com/"
+"Georgios Fainekos": "https://www.fainekos.net/"
+"Lars Lindemann": "https://sites.google.com/view/larslindemann/main-page"
+"Matteo Sesia": "https://msesia.github.io/"
+"Meiyi Ma": "https://meiyima.github.io/"
+"Taylor Johnson": "https://www.taylortjohnson.com/"
+"Xiang Yin": "https://xiangyin.sjtu.edu.cn/"
+"Xinyi Yu": "https://xinyi-yu.github.io/"
+"Ziyan An": "https://ziyanan.github.io/"
+
