@@ -99,3 +99,5 @@ awards:
 <b>Yiqi (Nick) Zhao</b> is a PhD Candidate in Computer Science at the <a href = 'https://viterbischool.usc.edu/'>University of Southern California</a> (USC). He is advised by <a href = "https://jdeshmukh.github.io/">Professor Jyo Deshmukh</a> and <a href = "https://yuewang.xyz/"> Professor Yue Wang</a>. He is honored to be a member of the <a href = 'https://cps-vida.github.io/'>CPS-VIDA lab</a> and the <a href = 'https://psi-lab.ai/'>PSI Lab</a> at USC. He also works closely with <a href = "https://sites.google.com/view/larslindemann/main-page">Professor Lars Lindemann</a>. His research focuses on multirobot design and verification.
 
 {style="text-align: justify;"}
+
+<p style="font-style: italic; text-align: center; margin-top: 1.5rem;">"One day, I just wanted to keep swimming, until the sea turned blue." — Yu Hua</p>
