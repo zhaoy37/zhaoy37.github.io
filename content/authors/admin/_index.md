@@ -30,7 +30,7 @@ profiles:
   - icon: envelope
     url: 'mailto:yiqizhao@usc.edu'
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=kim0L6QAAAAJ&hl=en
+    url: https://scholar.google.com/citations?hl=en&user=kim0L6QAAAAJ&view_op=list_works&sortby=pubdate
   - icon: academicons/researchgate
     url: https://www.researchgate.net/profile/Yiqi-Zhao-14
   - icon: brands/github
