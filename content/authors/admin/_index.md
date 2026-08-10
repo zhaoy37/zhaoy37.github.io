@@ -6,6 +6,9 @@ title: Yiqi Zhao
 first_name: Yiqi
 last_name: Zhao
 
+# Chinese name, shown under the display name
+name_zh: 赵一淇
+
 # Status emoji
 status:
   icon: ☕️
@@ -100,4 +103,7 @@ awards:
 
 {style="text-align: justify;"}
 
-<p style="font-style: italic; text-align: center; margin-top: 1.5rem;">"One day, I just wanted to keep swimming, until the sea turned blue." — Yu Hua</p>
+<div class="motto">
+<p class="motto-en">"One day, I just wanted to keep swimming, until the sea turned blue." — Yu Hua</p>
+<p class="motto-zh">「有一天我就想一直游，我想一直游到海水变蓝」——余华</p>
+</div>

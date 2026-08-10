@@ -1,4 +1,51 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400&display=swap"
+>
 <style>
+  /* Motto under the About Me bio: quiet, centered, serif. The Chinese line
+     prefers a locally installed Kai (楷体) face for a lighter, more delicate
+     stroke, falling back to Noto Serif SC. */
+  .motto {
+    margin-top: 1.75rem;
+    /* The motto's own <p>s have no margins, so carry the breathing room to the
+       Download CV button here. */
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.9;
+    opacity: 0.8;
+  }
+  .motto p {
+    margin: 0;
+  }
+  .motto-en {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1rem;
+  }
+  .motto-zh,
+  .name-zh {
+    font-family: 'Kaiti SC', 'STKaiti', 'KaiTi', 'BiauKai', 'Noto Serif SC',
+      'Songti SC', 'Source Han Serif SC', serif;
+    font-weight: 300;
+  }
+  .motto-zh {
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    margin-top: 0.35rem !important;
+  }
+
+  /* Chinese name under the display name in the biography blox. */
+  .name-zh {
+    font-size: 1.35rem;
+    letter-spacing: 0.14em;
+    text-indent: 0.14em; /* offset the trailing letter-spacing so it stays centered */
+    line-height: 1.4;
+    opacity: 0.85;
+  }
+
   /* Featured publication cards: fixed-width list, media contained (not cropped) */
   .pub-card-list {
     display: flex;
