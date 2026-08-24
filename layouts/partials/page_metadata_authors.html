@@ -21,7 +21,7 @@
     </span>
     {{- if isset $.Params "author_notes" -}}
       {{- with (index $.Params.author_notes $index) -}}
-        <sup class="author-notes" title="{{.}}">*</sup>
+        <sup class="author-notes" title="{{.}}">{{ if eq (lower .) "equal advising" }}&dagger;{{ else }}*{{ end }}</sup>
       {{- end -}}
     {{- end -}}
   {{- end -}}
