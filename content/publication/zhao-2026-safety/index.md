@@ -33,7 +33,7 @@ summary:
 featured: true
 
 # Custom links (uncomment lines below)
-url_pdf: '2026___Safety_aware_MPPI_with_STL.pdf'
+url_pdf: '/publication/zhao-2026-safety/2026___Safety_aware_MPPI_with_STL.pdf'
 url_code: ''
 url_dataset: ''
 url_poster: ''
