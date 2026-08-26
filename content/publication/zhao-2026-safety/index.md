@@ -22,7 +22,7 @@ doi: ''
 publication_types: ["article"]
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: '*arXiv preprint arXiv:2608.23972*'
 
 abstract: Safety-aware motion planning remains a challenge in robotics, especially when missions are time-critical and are under complex specifications. In this paper, we propose safety-aware-stl-mppi, a computationally efficient sampling-based receding-horizon planning framework designed to promote satisfaction of constraints expressed in Signal Temporal Logic (STL). Our approach encodes discrete-time STL formulas into candidate time-varying control barrier functions (CBF), which are integrated into a model predictive path integral (MPPI) controller. Our method inherits the benefits of low computational cost from an efficiently parallelizable sampling based planner and utilizes CBF for constraints expressed in STL. We compare against several MPPI baselines using four artificial Mars Rover planning case studies with a diverse environment and cost setups, where we show our method consistently achieving high safety and efficiency. We show a quadcopter planning experiment with NVIDIA Isaac Lab.
 
@@ -33,7 +33,7 @@ summary:
 featured: true
 
 # Custom links (uncomment lines below)
-url_pdf: '/publication/zhao-2026-safety/2026___Safety_aware_MPPI_with_STL.pdf'
+url_pdf: 'https://arxiv.org/pdf/2608.23972'
 url_code: ''
 url_dataset: ''
 url_poster: ''
