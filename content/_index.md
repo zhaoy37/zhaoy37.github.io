@@ -38,6 +38,7 @@ sections:
         folders:
           - publication
         featured_only: true
+      count: 0
     design:
       view: card
       columns: 1
