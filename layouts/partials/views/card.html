@@ -42,9 +42,12 @@
         {{ partial "page_metadata_authors" $item }}
       </p>
       {{ with $item.Params.summary }}
-      <p class="block mt-1 text-sm leading-tight font-medium text-black dark:text-white">
-        {{ . | plainify | htmlUnescape | chomp -}}
+      {{/* Each line of a multi-line summary is shown on its own line. */}}
+      {{ range $i, $line := split (chomp .) "\n" }}
+      <p class="block {{ if $i }}mt-2{{ else }}mt-1{{ end }} text-sm leading-tight font-medium text-black dark:text-white">
+        {{ $line | plainify | htmlUnescape | chomp -}}
       </p>
+      {{ end }}
       {{ end }}
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">
         {{- $item.Date | time.Format (site.Params.locale.date_format | default ":date_long") -}}
