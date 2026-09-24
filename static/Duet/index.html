@@ -322,10 +322,10 @@
       <h2>Results</h2>
       <p class="body-text">
         Our heterogeneous duo pairs a Unitree G1 humanoid with a Dexmate Vega1 mobile manipulator, evaluated on
-        four contact-rich collaborative tasks. Each policy is evaluated over <strong>10 independent hardware
+        four contact-rich collaborative tasks. Each policy is evaluated over <strong>30 independent hardware
         trials per task</strong>, and every trial is scored from 0.0 to 1.0 through two sequential milestones
         worth 0.5 points each (e.g., for Doll Passing: the initial grasp by Vega1, then the dual-robot handover).
-        <strong>Points</strong> are the cumulative score over the 10 trials (out of a maximum of 10), capturing
+        <strong>Points</strong> are the cumulative score over the 30 trials (out of a maximum of 30), capturing
         partial progress; the <strong>success rate</strong> counts only trials where all milestones are completed.
         Across all four tasks, pretraining on 60 human demonstrations and finetuning on just 30 robot trajectories
         achieves equal or better points and success rates than baselines trained on 50 robot-only demonstrations, while requiring less total data collection effort. Qualitatively, the human-pretrained policy
@@ -335,7 +335,7 @@
 
       <figure class="figure">
         <img data-src="images.pointsSuccessRate" alt="Points and success rates across tasks" loading="lazy" />
-        <figcaption><strong>Points and success rates</strong> across the four collaborative tasks, over 10
+        <figcaption><strong>Points and success rates</strong> across the four collaborative tasks, over 30
         hardware trials per task.</figcaption>
       </figure>
 
