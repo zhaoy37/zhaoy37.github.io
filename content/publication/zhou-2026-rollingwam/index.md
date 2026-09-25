@@ -80,7 +80,4 @@ video_preview: teaser.mp4
 ![Rolling-WAM overview](featured.png)
 <small>Rolling-WAM maintains a rolling window of video-action predictions at staggered noise levels.</small>
 
-{{< video src="project_video.mp4" poster="featured.png" controls="yes" >}}
-<small>Rolling-WAM project video.</small>
-
 </center>
