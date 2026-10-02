@@ -41,12 +41,24 @@
       <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 article-metadata li-cite-author">
         {{ partial "page_metadata_authors" $item }}
       </p>
+      {{/* Awards (junjieye.com style): trophy + bold award name in a muted gold,
+           one per line. Each entry is Markdown so venues can be linked. */}}
+      {{ with $item.Params.awards }}
+      <div class="pub-award mt-2">
+        {{ range . }}
+        <p>&#127942; {{ . | markdownify | emojify }}</p>
+        {{ end }}
+      </div>
+      {{ end }}
       {{ with $item.Params.summary }}
-      {{/* Each line of a multi-line summary is shown on its own line. */}}
+      {{/* Each line of a multi-line summary is shown on its own line.
+           Lines are Markdown so venues can be linked. */}}
       {{ range $i, $line := split (chomp .) "\n" }}
-      <p class="block {{ if $i }}mt-2{{ else }}mt-1{{ end }} text-sm leading-tight font-medium text-black dark:text-white">
-        {{ $line | plainify | htmlUnescape | chomp -}}
+      {{ with chomp $line }}
+      <p class="block {{ if $i }}mt-2{{ else }}mt-1{{ end }} text-sm leading-tight font-medium text-black dark:text-white pub-summary">
+        {{ . | markdownify | emojify -}}
       </p>
+      {{ end }}
       {{ end }}
       {{ end }}
       <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">

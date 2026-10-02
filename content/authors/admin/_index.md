@@ -75,14 +75,14 @@ work:
       Full stack API development for the Autopay Group within the Global Product & Tech group. Supervisor: Jim Farber.
 
 awards:
-  - title: "Best Contribution at the IROS 2026 Workshop on Real-World Challenges in Multi-Robot Cooperation: The Power of Heterogeneity and Diversity"
-    awarder: "IROS 2026 Workshop on Real-World Challenges in Multi-Robot Cooperation: The Power of Heterogeneity and Diversity"
+  - title: "Best Contribution at the [IROS 2026 RWCMRC Workshop](https://sites.google.com/view/iros2026-2nd-wrwcmrc/home)"
+    awarder: "IROS 2026 Workshop on Real-World Challenges in Multi-Robot Cooperation: The Power of Heterogeneity and Diversity (RWCMRC)"
     date: 2026-09-01
     date_start: 2026-09-01
     summary: |
       Awarded for the paper "DUET: Dual-Robot Understanding via Efficient Teaching".
-  - title: Best Paper Finalist at the IROS 2026 Workshop on Physical Collaboration and Interaction in Multi-Robot Systems
-    awarder: IROS 2026 Workshop on Physical Collaboration and Interaction in Multi-Robot Systems
+  - title: "Best Paper Finalist at the [IROS 2026 PhysCollaBot Workshop](https://physcollabot.github.io/)"
+    awarder: IROS 2026 Workshop on Physical Collaboration and Interaction in Multi-Robot Systems (PhysCollaBot)
     date: 2026-09-01
     date_start: 2026-09-01
     summary: |
