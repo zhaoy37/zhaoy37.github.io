@@ -39,6 +39,11 @@ summary: "[IROS 2026 ReS AI Workshop](https://embodied-nesy.github.io/) (Oral)."
 featured: true
 
 # Custom links (uncomment lines below)
+# Custom links
+links:
+- name: Project
+  url: https://logic-vla.github.io/
+
 url_pdf: 'https://arxiv.org/pdf/2608.20556'
 url_code: ''
 url_dataset: ''
@@ -55,6 +60,10 @@ image:
   focal_point: ''
   preview_only: true
 
+
+# Video clip shown instead of the featured image on homepage cards
+# (16 s excerpt of https://logic-vla.github.io/assets/logic-vla-video.mp4)
+video_preview: preview.mp4
 ---
 
 <center>
