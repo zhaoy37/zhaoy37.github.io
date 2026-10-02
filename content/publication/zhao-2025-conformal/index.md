@@ -29,7 +29,7 @@ publication: '*arXiv preprint arXiv:2402.07407*'
 
 abstract: We propose conformal predictive programming (CPP), a framework to solve chance constrained optimization problems, i.e., optimization problems with constraints that are functions of random variables. CPP utilizes samples from these random variables along with the quantile lemma - central to conformal prediction - to transform the chance constrained optimization problem into a deterministic problem with a quantile reformulation. CPP's main strength is an independent calibration step that provides a posteriori guarantees for the solution of this problem that are of conditional and marginal nature otherwise. These guarantees even apply in settings when assumptions required for obtaining standard a priori guarantees (e.g., in scenario optimization or sample average approximation) are unavailable, difficult to compute, or conservative. Another strength of CPP is that it can easily support different variants of conformal prediction which have been (or will be) proposed within the conformal prediction community. To illustrate this, we present robust CPP to deal with distribution shifts in the random variables and Mondrian CPP to deal with class conditional chance constraints. In a series of case studies, we show the validity of the aforementioned approaches, and illustrate the advantage of CPP as compared to scenario approach.
 
-summary: Currently under review in Automatica.
+summary: Under submission at Automatica
 
 # Display this page in the Featured widget?
 featured: false
