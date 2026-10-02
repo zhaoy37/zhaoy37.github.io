@@ -63,7 +63,7 @@ image:
 
 # Video clip shown instead of the featured image on homepage cards
 # (10 s excerpt, the four HSR routes, from https://logic-vla.github.io/assets/logic-vla-video.mp4)
-video_preview: preview.mp4
+video_preview: preview-hsr-routes.mp4
 ---
 
 <center>
