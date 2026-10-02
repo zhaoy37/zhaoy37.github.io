@@ -1,0 +1,42 @@
+{{/* Awards block (override of Hugo Blox resume-awards): a compact one-line-per-award
+     list in the style of junjieye.com instead of the stock card grid.
+       <year> · <title>  <awarder>
+     `awarder` links to `url` when set; `title` links to `certificate_url` when set. */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $author := $block.content.username | default "admin" }}
+{{ $person_page := site.GetPage (printf "/authors/%s" $author) }}
+{{ if not $person_page }}
+{{ errorf "Could not find an author page for `%s`." $author }}
+{{ end }}
+{{ $awards := $person_page.Params.awards }}
+{{ $date_format := $block.design.date_format | default "2006" }}
+
+<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6 md:px-0">
+  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+    {{ $block.content.title | markdownify | emojify }}
+  </div>
+  {{ with $block.content.text }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+</div>
+
+<div class="award-list">
+  {{ range sort $awards ".date_start" "desc" }}
+  {{ $award := . }}
+  <div class="award-item">
+    <span class="award-year">{{ with $award.date }}{{ (time .) | time.Format $date_format }}{{ else }}{{ i18n "present" | default "Present" }}{{ end }}</span>
+    <span class="award-dot">&middot;</span>
+    <span class="award-name">
+      {{- with $award.certificate_url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end -}}
+      {{- $award.title | markdownify | emojify -}}
+      {{- if $award.certificate_url }}</a>{{ end -}}
+    </span>
+    {{ with $award.awarder }}
+    <span class="award-from">&ensp;
+      {{- with $award.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end -}}
+      {{- $award.awarder | markdownify | emojify -}}
+      {{- if $award.url }}</a>{{ end -}}
+    </span>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>

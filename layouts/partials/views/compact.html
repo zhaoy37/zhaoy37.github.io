@@ -1,0 +1,30 @@
+{{/* Compact publication row for the full publications list (junjieye.com style):
+     title, authors, awards, venue/summary line, attachment links. */}}
+{{ $item := .item }}
+{{ $link := $item.RelPermalink }}
+{{ $target := "" }}
+{{ if $item.Params.external_link }}
+  {{ $link = $item.Params.external_link }}
+  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+{{ end }}
+<div class="pub-row">
+  <div class="pub-row-title">
+    <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
+  </div>
+  <div class="pub-row-authors article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}
+  </div>
+  {{ with $item.Params.awards }}
+  <div class="pub-award">
+    {{ range . }}<p>&#127942; {{ . | markdownify | emojify }}</p>{{ end }}
+  </div>
+  {{ end }}
+  {{ with $item.Params.summary }}
+  {{ range $line := split (chomp .) "\n" }}
+  {{ with chomp $line }}<p class="pub-row-venue pub-summary">{{ . | markdownify | emojify }}</p>{{ end }}
+  {{ end }}
+  {{ end }}
+  <div class="pub-card-links pub-row-links">
+    {{ partial "page_links.html" (dict "page" $item "is_list" true) }}
+  </div>
+</div>

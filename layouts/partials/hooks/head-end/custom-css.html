@@ -167,6 +167,153 @@
     border-bottom-color: rgba(255, 255, 255, 0.35);
   }
 
+  /* "Full List →" link beside the Featured Publications heading. */
+  .full-list-link {
+    display: inline-block;
+    margin-left: 0.75rem;
+    vertical-align: middle;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #888;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+  }
+  .full-list-link:hover {
+    color: #555;
+    border-bottom-color: #999;
+  }
+  html.dark .full-list-link {
+    color: #aaa;
+    border-bottom-color: #555;
+  }
+  html.dark .full-list-link:hover {
+    color: #fff;
+    border-bottom-color: #aaa;
+  }
+
+  /* Awards: compact list (junjieye.com style) — year · name  from */
+  .award-list {
+    width: 100%;
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+  .award-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .award-year {
+    min-width: 2.8rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #bbb;
+  }
+  .award-dot {
+    color: #ccc;
+  }
+  .award-name {
+    font-weight: 600;
+    color: #222;
+  }
+  .award-name a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .award-name a:hover {
+    text-decoration: underline;
+  }
+  .award-from {
+    color: #888;
+  }
+  .award-from a {
+    color: #888;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .award-from a:hover {
+    color: #555;
+    border-bottom-color: #999;
+  }
+  html.dark .award-year { color: #666; }
+  html.dark .award-dot { color: #555; }
+  html.dark .award-name { color: #eee; }
+  html.dark .award-from,
+  html.dark .award-from a { color: #999; border-bottom-color: #444; }
+  html.dark .award-from a:hover { color: #ddd; border-bottom-color: #888; }
+  @media (max-width: 640px) {
+    .award-item {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* Full publications list grouped by year (/publication/). */
+  .pub-years {
+    width: 100%;
+    max-width: 56rem;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+  .pub-year-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid #eee;
+  }
+  html.dark .pub-year-heading {
+    border-bottom-color: #333;
+  }
+  .pub-row {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #f3f3f3;
+  }
+  .pub-row:last-child {
+    border-bottom: none;
+  }
+  html.dark .pub-row {
+    border-bottom-color: #2a2a2a;
+  }
+  .pub-row-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.15rem;
+  }
+  .pub-row-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .pub-row-title a:hover {
+    text-decoration: underline;
+  }
+  .pub-row-authors {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.3rem;
+  }
+  html.dark .pub-row-authors {
+    color: #999;
+  }
+  .pub-row-venue {
+    font-size: 0.85rem;
+    margin: 0.15rem 0 0;
+  }
+  .pub-row .pub-award + .pub-row-venue {
+    margin-top: 0.5rem;
+  }
+  .pub-row-links {
+    margin-top: 0.5rem;
+  }
+
   /* Clickable author names linking to homepages (junjieye.com style):
      blend in with the surrounding author text — same color, no bold, no
      underline — and only reveal an underline + slight darkening on hover. */

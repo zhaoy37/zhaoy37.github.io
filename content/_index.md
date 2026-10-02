@@ -33,7 +33,7 @@ sections:
   - block: collection
     id: papers
     content:
-      title: Featured Publications
+      title: 'Featured Publications <a class="full-list-link" href="/publication/">Full List &rarr;</a>'
       filters:
         folders:
           - publication
@@ -42,16 +42,6 @@ sections:
     design:
       view: card
       columns: 1
-  - block: collection
-    content:
-      title: Recent Publications
-      text: ""
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      view: citation
   - block: experience
     id: experience
     content:

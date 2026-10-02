@@ -1,0 +1,21 @@
+{{/* Publications index: every publication grouped under a year heading
+     (newest year first), in the compact list style of junjieye.com/publications.html. */}}
+{{ define "main" }}
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl">{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+
+<div class="pub-years">
+  {{ range .Pages.GroupByDate "2006" }}
+  <h2 class="pub-year-heading">{{ .Key }}</h2>
+  {{ range .Pages.ByDate.Reverse }}
+    {{ partial "views/compact.html" (dict "item" .) }}
+  {{ end }}
+  {{ end }}
+</div>
+
+{{ end }}

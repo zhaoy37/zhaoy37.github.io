@@ -65,7 +65,7 @@ work:
     date_start: 2025-05-01
     date_end: 2025-08-01
     summary: |
-      Worked on cyber-physical systems research at the Future Research Department; Conducted research on Model Predictive Path Integral (paper coming soon). Supervisors: Georgios Fainekos, Bardh Hoxha.
+      Worked on cyber-physical systems research at the Future Research Department; Conducted research on Model Predictive Path Integral ([paper](/publication/zhao-2026-safety/)). Supervisors: Georgios Fainekos, Bardh Hoxha.
   - position: Application Development Intern
     company_name: ADP
     company_logo: adp.png
@@ -75,36 +75,31 @@ work:
       Full stack API development for the Autopay Group within the Global Product & Tech group. Supervisor: Jim Farber.
 
 awards:
-  - title: "Best Contribution at the [IROS 2026 RWCMRC Workshop](https://sites.google.com/view/iros2026-2nd-wrwcmrc/home)"
-    awarder: "IROS 2026 Workshop on Real-World Challenges in Multi-Robot Cooperation: The Power of Heterogeneity and Diversity (RWCMRC)"
+  # Rendered as a compact list by layouts/partials/blox/resume-awards.html:
+  #   <year> · <title>  <awarder>   (awarder links to `url` if set)
+  - title: Best Contribution
+    awarder: IROS 2026 RWCMRC Workshop
+    url: https://sites.google.com/view/iros2026-2nd-wrwcmrc/home
     date: 2026-09-01
     date_start: 2026-09-01
-    summary: |
-      Awarded for the paper "DUET: Dual-Robot Understanding via Efficient Teaching".
-  - title: "Best Paper Finalist at the [IROS 2026 PhysCollaBot Workshop](https://physcollabot.github.io/)"
-    awarder: IROS 2026 Workshop on Physical Collaboration and Interaction in Multi-Robot Systems (PhysCollaBot)
+  - title: Best Paper Finalist
+    awarder: IROS 2026 PhysCollaBot Workshop
+    url: https://physcollabot.github.io/
     date: 2026-09-01
     date_start: 2026-09-01
-    summary: |
-      Awarded for the paper "DUET: Dual-Robot Understanding via Efficient Teaching".
-  - title: ICCPS Best Paper Award Finalist
-    awarder: 15th ACM/IEEE International Conference on Cyber-Physical Systems
+  - title: Best Paper Award Finalist
+    awarder: ICCPS 2024
+    url: https://iccps.acm.org/2024/
     date: 2024-05-01
     date_start: 2024-05-01
-    summary: |
-      Awarded for the paper "Robust Conformal Prediction for STL Runtime Verification under Distribution Shift".
   - title: Viterbi School of Engineering Fellowship
-    awarder: Viterbi School of Engineering, USC
+    awarder: USC
     date: 2023-08-01
     date_start: 2023-08-01
-    summary: |
-      Awarded to selected incoming PhD students at the Viterbi School of Engineering, USC.
-  - title: VISE Award (Vanderbilt Institute for Surgery and Engineering Summer Fellowship)
+  - title: VISE Summer Fellowship
     awarder: Vanderbilt Institute for Surgery and Engineering
     date: 2021-01-01
     date_start: 2021-01-01
-    summary: |
-      Awarded for the paid fellowship at the Vanderbilt Institute for Surgery and Engineering Summer Fellows Program.
 
 ---
 
