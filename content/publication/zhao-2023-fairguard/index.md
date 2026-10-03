@@ -30,6 +30,9 @@ summary: The 8th ACM/IEEE Conference on Internet of Things Design and Implementa
 # Display this page in the Featured widget?
 featured: true
 
+# Topic filter on the homepage / publication list: robot-learning | planning-control-verification
+topic: planning-control-verification
+
 # Custom links (uncomment lines below)
 # links:
 # - name: Custom Link

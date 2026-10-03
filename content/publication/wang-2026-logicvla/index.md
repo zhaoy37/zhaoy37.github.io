@@ -38,6 +38,9 @@ summary: "[IROS 2026 ReS AI Workshop](https://embodied-nesy.github.io/) (Oral)"
 # Display this page in the Featured widget?
 featured: true
 
+# Topic filter on the homepage / publication list: robot-learning | planning-control-verification
+topic: robot-learning
+
 # Custom links (uncomment lines below)
 # Custom links
 links:

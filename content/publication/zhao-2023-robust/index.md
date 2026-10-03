@@ -34,6 +34,9 @@ awards:
 # Display this page in the Featured widget?
 featured: true
 
+# Topic filter on the homepage / publication list: robot-learning | planning-control-verification
+topic: planning-control-verification
+
 # Custom links (uncomment lines below)
 # links:
 # - name: Custom Link

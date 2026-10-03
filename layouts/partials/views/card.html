@@ -19,7 +19,7 @@
 
 {{/* Card is a <div> (not one big <a>) so the attachment buttons below can be
      their own links without nesting anchors. Title + thumbnail are the links. */}}
-<div class="pub-card mb-5">
+<div class="pub-card mb-5" data-topic="{{ $item.Params.topic | default "planning-control-verification" }}">
   <div class="pub-card-row">
     <div class="pub-card-media">
       <a href="{{ $link }}" {{ $target | safeHTMLAttr }} aria-label="{{ $item.Title | plainify }}">

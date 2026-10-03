@@ -7,7 +7,7 @@
   {{ $link = $item.Params.external_link }}
   {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
 {{ end }}
-<div class="pub-row">
+<div class="pub-row" data-topic="{{ $item.Params.topic | default "planning-control-verification" }}">
   <div class="pub-row-title">
     <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
   </div>

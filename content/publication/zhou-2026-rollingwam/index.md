@@ -50,13 +50,16 @@ summary: ""
 # Display this page in the Featured widget?
 featured: true
 
+# Topic filter on the homepage / publication list: robot-learning | planning-control-verification
+topic: robot-learning
+
 # Custom links (uncomment lines below)
 links:
 - name: Project
   url: https://rolling-wam.github.io/
 
 url_pdf: 'https://arxiv.org/pdf/2609.30247'
-url_code: ''
+url_code: 'https://github.com/zyinghua/Rolling-WAM'
 url_dataset: ''
 url_poster: ''
 url_project: ''

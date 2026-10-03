@@ -55,6 +55,9 @@ summary: ""
 # Display this page in the Featured widget?
 featured: true
 
+# Topic filter on the homepage / publication list: robot-learning | planning-control-verification
+topic: robot-learning
+
 # Custom links (uncomment lines below)
 # links:
 # - name: Project

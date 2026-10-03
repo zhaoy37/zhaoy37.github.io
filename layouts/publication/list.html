@@ -10,11 +10,14 @@
 </div>
 
 <div class="pub-years">
+  {{ partial "pub-filter.html" . }}
   {{ range .Pages.GroupByDate "2006" }}
+  <div class="pub-year-group">
   <h2 class="pub-year-heading">{{ .Key }}</h2>
   {{ range .Pages.ByDate.Reverse }}
     {{ partial "views/compact.html" (dict "item" .) }}
   {{ end }}
+  </div>
   {{ end }}
 </div>
 

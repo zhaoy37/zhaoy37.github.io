@@ -36,6 +36,9 @@ summary: The 22nd ACM-IEEE International Symposium on Formal Methods and Models 
 # Display this page in the Featured widget?
 featured: false
 
+# Topic filter on the homepage / publication list: robot-learning | planning-control-verification
+topic: planning-control-verification
+
 # Custom links (uncomment lines below)
 # links:
 # - name: Custom Link

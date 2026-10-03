@@ -1,0 +1,32 @@
+{{/* Topic switch for publication lists. Buttons toggle which items are shown
+     based on each item's `data-topic` attribute (from front matter `topic`).
+     Default: All. Shared by the homepage cards and the /publication/ list. */}}
+<div class="pub-filter" role="group" aria-label="Filter publications by topic">
+  <button type="button" class="pub-filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+  <button type="button" class="pub-filter-btn" data-filter="robot-learning" aria-pressed="false">Robot Learning</button>
+  <button type="button" class="pub-filter-btn" data-filter="planning-control-verification" aria-pressed="false">Planning, Control and Verification</button>
+</div>
+<script>
+(function () {
+  if (window.__pubFilterInit) return;
+  window.__pubFilterInit = true;
+  function apply(filter) {
+    document.querySelectorAll('[data-topic]').forEach(function (el) {
+      el.hidden = filter !== 'all' && el.getAttribute('data-topic') !== filter;
+    });
+    // Hide year groups (full list) that have no visible entries.
+    document.querySelectorAll('.pub-year-group').forEach(function (g) {
+      g.hidden = !g.querySelector('[data-topic]:not([hidden])');
+    });
+    document.querySelectorAll('.pub-filter-btn').forEach(function (b) {
+      var on = b.getAttribute('data-filter') === filter;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.pub-filter-btn');
+    if (b) apply(b.getAttribute('data-filter'));
+  });
+})();
+</script>
