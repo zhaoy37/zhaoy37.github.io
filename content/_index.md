@@ -59,4 +59,12 @@ sections:
       date_format: '2006'
       spacing:
         padding: ['2rem', 0, '2rem', 0]
+  - block: services
+    id: services
+    content:
+      username: admin
+      title: Academic Services
+    design:
+      spacing:
+        padding: ['2rem', 0, '2rem', 0]
 ---

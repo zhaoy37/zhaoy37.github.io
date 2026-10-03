@@ -365,6 +365,56 @@
     display: none !important;
   }
 
+  /* Academic services: label + plain comma-separated venues, no pills. */
+  .svc-list {
+    width: 100%;
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+  }
+  .svc-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .svc-label {
+    flex: 0 0 11rem;
+    font-weight: 600;
+    color: #222;
+  }
+  .svc-tags {
+    color: #777;
+  }
+  .svc-tag + .svc-tag::before {
+    content: ", ";
+  }
+  .svc-tag a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .svc-tag a:hover {
+    color: #222;
+    border-bottom-color: #999;
+  }
+  html.dark .svc-label { color: #eee; }
+  html.dark .svc-tags { color: #999; }
+  html.dark .svc-tag a { border-bottom-color: #444; }
+  html.dark .svc-tag a:hover { color: #ddd; border-bottom-color: #888; }
+  @media (max-width: 640px) {
+    .svc-row {
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .svc-label {
+      flex-basis: auto;
+    }
+  }
+
   /* Clickable author names linking to homepages (junjieye.com style):
      blend in with the surrounding author text — same color, no bold, no
      underline — and only reveal an underline + slight darkening on hover. */

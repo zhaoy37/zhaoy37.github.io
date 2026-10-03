@@ -101,6 +101,37 @@ awards:
     date: 2021-01-01
     date_start: 2021-01-01
 
+
+# Academic services, rendered by layouts/partials/blox/services.html as rows of pill tags.
+# Each item may be plain text or Markdown (e.g. a link).
+services:
+  - label: Journal Reviewer
+    items:
+      - NAHS
+      - RA-L
+  - label: Conference Reviewer
+    items:
+      - ACC
+      - VMCAI
+      - CDC
+      - ICLR
+      - AISTATS
+      - HSCC
+      - L4DC
+      - ICCPS
+      - NEUS
+      - MECC
+      - ICRA
+      - NeurIPS
+  - label: Program Committee
+    items:
+      - HSCC 2024 (Repeatability Evaluation)
+      - HSCC 2025 (Repeatability Evaluation)
+      - ICCPS 2025 (Posters and Demos)
+  - label: Tutorial
+    items:
+      - '[Formal Verification and Control with Conformal Prediction](https://sites.google.com/view/cps-iot25-tutorial-cp), CPS-IoT Week 2025'
+
 ---
 
 ## About Me

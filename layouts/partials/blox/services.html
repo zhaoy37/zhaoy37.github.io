@@ -1,0 +1,28 @@
+{{/* Custom block: Academic Services. Reads `services` from the author profile
+     and renders each group as a label followed by pill tags (junjieye.com style).
+     Items are Markdown so individual entries can carry a link. */}}
+{{ $block := .wcBlock }}
+{{ $author := $block.content.username | default "admin" }}
+{{ $person_page := site.GetPage (printf "/authors/%s" $author) }}
+{{ if not $person_page }}
+{{ errorf "Could not find an author page for `%s`." $author }}
+{{ end }}
+{{ $services := $person_page.Params.services }}
+
+<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6 md:px-0">
+  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+    {{ $block.content.title | markdownify | emojify }}
+  </div>
+  {{ with $block.content.text }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+</div>
+
+<div class="svc-list">
+  {{ range $services }}
+  <div class="svc-row">
+    <span class="svc-label">{{ .label }}</span>
+    <span class="svc-tags">
+      {{ range .items }}<span class="svc-tag">{{ . | markdownify | emojify }}</span>{{ end }}
+    </span>
+  </div>
+  {{ end }}
+</div>
