@@ -16,3 +16,6 @@ main:
   - name: Awards
     url: /#awards
     weight: 13
+  - name: Services
+    url: /#services
+    weight: 14
