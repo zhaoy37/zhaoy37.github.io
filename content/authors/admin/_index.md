@@ -77,6 +77,11 @@ work:
 awards:
   # Rendered as a compact list by layouts/partials/blox/resume-awards.html:
   #   <year> · <title>  <awarder>   (awarder links to `url` if set)
+  - title: Best Poster Presentation Award
+    awarder: IROS 2026 LAFR Workshop
+    url: https://lafr-workshop.github.io/
+    date: 2026-10-01
+    date_start: 2026-10-01
   - title: Best Contribution
     awarder: IROS 2026 RWCMRC Workshop
     url: https://sites.google.com/view/iros2026-2nd-wrwcmrc/home
