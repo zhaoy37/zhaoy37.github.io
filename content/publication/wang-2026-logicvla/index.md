@@ -37,7 +37,7 @@ summary: ""
 
 # Awards (Markdown; shown with a trophy on the homepage card)
 awards:
-  - '**Best Poster Presentation Award**, [IROS 2026 LAFR Workshop](https://lafr-workshop.github.io/)'
+  - '**Best Poster Award**, [IROS 2026 LAFR Workshop](https://lafr-workshop.github.io/)'
 
 # Display this page in the Featured widget?
 featured: true
