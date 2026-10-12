@@ -50,7 +50,8 @@ window.SITE_CONFIG = {
     youtubeEmbed: "https://youtu.be/QEKdId4Oeqw",
     arxiv: "https://arxiv.org/abs/2608.23972",
     video: "",   // no YouTube link; the summary video is embedded below
-    code: "",    // hidden until a repository is public
+    // "Code" button — points at this page until the repository is public
+    code: "https://zhaoy37.github.io/safety-aware-stl-mppi/",
   },
 
 };
