@@ -57,7 +57,7 @@ image:
   preview_only: true
 
 # Video clip shown instead of the featured image on homepage cards
-video_preview: /safety-aware-stl-mppi/static/videos/quad.mp4
+video_preview: /safety-aware-stl-mppi/static/videos/card-preview.mp4
 ---
 
 <center>
