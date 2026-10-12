@@ -31,8 +31,6 @@ window.SITE_CONFIG = {
   ],
 
   videos: {
-    // Narrated summary video (Video section)
-    summary: "./static/videos/summary.mp4",
     // Results section clips
     roverCaseC: "./static/videos/animation.mp4",
     quadcopter: "./static/videos/quad.mp4",
@@ -48,6 +46,8 @@ window.SITE_CONFIG = {
 
   links: {
     paperPdf: "https://arxiv.org/pdf/2608.23972",
+    // Embedded player in the summary-video section (any YouTube format works)
+    youtubeEmbed: "https://youtu.be/QEKdId4Oeqw",
     arxiv: "https://arxiv.org/abs/2608.23972",
     video: "",   // no YouTube link; the summary video is embedded below
     code: "",    // hidden until a repository is public
