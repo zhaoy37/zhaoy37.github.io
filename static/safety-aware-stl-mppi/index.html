@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Safety-aware Model Predictive Path Integral Control with Signal Temporal Logic">
+  <meta name="keywords" content="Robotics, Motion Planning, Signal Temporal Logic, Control Barrier Functions, MPPI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    Safety-aware STL-MPPI: Safety-aware Model Predictive Path Integral Control with Signal Temporal Logic
+  </title>
+
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg" />
+  <link rel="apple-touch-icon" href="./static/images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,18..72,400;0,18..72,500;1,18..72,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '\\(', right: '\\)', display: false}
+    ]});"></script>
+
+  <script src="./config.js"></script>
+  <script src="./static/js/load-config.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAV (fixed at the very top) ================= -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top"><img class="nav-logo" src="./static/images/logo.svg" alt="" />Safety-aware STL-MPPI</a>
+    <div class="nav-links">
+      <a href="#video">Video</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#formulation">Formulation</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#bibtex">BibTeX</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HEADER (plain title + authors) ================= -->
+<header class="page-head" id="top">
+  <div class="page-head-inner">
+    <h1 class="ph-title" data-text="text.subtitle"></h1>
+    <div class="banner-authors" data-authors></div>
+    <div class="banner-affiliations" data-text="text.affiliations"></div>
+    <div class="banner-buttons">
+        <a class="btn" href="#" data-href="links.paperPdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M6 2h8l4 4v16H6z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 2v4h4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          Paper
+        </a>
+        <a class="btn" href="#" data-href="links.arxiv" target="_blank" rel="noopener">
+          <img class="ico" src="./static/images/arxiv.svg" alt="" />
+          arXiv
+        </a>
+        <a class="btn" href="#video">
+          <svg viewBox="0 0 24 24" class="ico"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 8.6l6 3.4-6 3.4z" fill="currentColor"/></svg>
+          Video
+        </a>
+        <a class="btn" href="#" data-href="links.code" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z" fill="currentColor"/></svg>
+          Code
+        </a>
+      </div>
+  </div>
+</header>
+
+<main>
+  <!-- ================= VIDEO ================= -->
+  <section class="section" id="video">
+    <div class="container">
+      <div class="video-embed" style="margin-top: 0;">
+        <video controls preload="metadata" playsinline poster="./static/videos/poster.jpg">
+          <source data-src="videos.summary" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABSTRACT ================= -->
+  <section class="section" id="abstract">
+    <div class="container">
+      <h2>Abstract</h2>
+      <p class="lead">
+        Safety-aware motion planning remains a challenge in robotics, especially when missions are time-critical
+        and are under complex specifications. In this paper, we propose <em>safety-aware-stl-mppi</em>, a
+        computationally efficient sampling-based receding-horizon planning framework designed to promote
+        satisfaction of constraints expressed in Signal Temporal Logic (STL). Our approach encodes discrete-time
+        STL formulas into candidate time-varying control barrier functions (CBF), which are integrated into a
+        model predictive path integral (MPPI) controller. Our method inherits the benefits of low computational
+        cost from an efficiently parallelizable sampling-based planner and utilizes CBF for constraints expressed
+        in STL. We compare against several MPPI baselines using four artificial Mars Rover planning case studies
+        with a diverse environment and cost setups, where we show our method consistently achieving high safety
+        and efficiency. We show a quadcopter planning experiment with NVIDIA Isaac Lab.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= HIGHLIGHTS ================= -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="cards">
+        <div class="card">
+          <div class="card-num">01</div>
+          <h3>The Problem</h3>
+          <p>Time-critical missions come with timed, spatio-temporal safety rules. Sampling-based planners such as
+          MPPI are fast but offer no safety guarantee, while optimization-based STL planners are too slow to run online.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">02</div>
+          <h3>Key Idea</h3>
+          <p>Encode the STL formula as a time-varying control barrier function, use it to weight MPPI's rollouts,
+          and project the weighted rollout onto the CBF's safe set with a cheap closed-form step.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">03</div>
+          <h3>Result</h3>
+          <p>100% empirical STL satisfaction across all four Mars Rover case studies, with and without actuation limits,
+          with significantly lower computation time than robustness- and penalty-based MPPI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROBLEM FORMULATION ================= -->
+  <section class="section" id="formulation">
+    <div class="container">
+      <h2>Problem Formulation</h2>
+      <p class="lead">
+        We consider motion planning problems in which a robot must satisfy a safety requirement expressed as a
+        signal temporal logic formula while minimizing a user-defined cost. The specification and the cost are
+        treated as separate objects: the cost encodes mission preferences, such as conserving actuation effort or
+        maintaining smooth motion, and may be unrelated to or even in conflict with the safety requirement. The
+        planner must optimize the cost while promoting satisfaction of the specification.
+      </p>
+
+      <h3>System and specifications</h3>
+      <p class="body-text">We consider discrete-time control-affine systems
+      \(x_{t+1} = f(x_t, u_t) := f_0(x_t) + g(x_t)\,u_t\) with state \(x_t \in \mathbb{R}^n\) and input
+      \(u_t \in \mathcal{U} \subseteq \mathbb{R}^m\) under box actuation limits. Safety requirements are expressed
+      in a fragment of signal temporal logic (STL):</p>
+      $$\begin{aligned}
+      \varphi &:= \top \;\mid\; \pi^{\mu} \;\mid\; \lnot\pi^{\mu} \;\mid\; \varphi_1 \land \varphi_2,\\[2pt]
+      \phi &:= G_{[a,b]}\varphi \;\mid\; F_{[a,b]}\varphi \;\mid\; \varphi_1\, U_{[a,b]}\, \varphi_2
+             \;\mid\; \phi_1 \land \phi_2 \;\mid\; \varphi
+      \end{aligned}$$
+      <p class="body-text">The atomic elements are predicates \(\pi^{\mu}\), defined through predicate functions
+      \(\mu : \mathbb{R}^n \to \mathbb{R}\) with \(\pi^\mu(x_t) = \top\) iff \(\mu(x_t) \ge 0\) &mdash; e.g.
+      signed distances to obstacles or goal regions. \(G_{[a,b]}\) (<em>always</em>), \(F_{[a,b]}\)
+      (<em>eventually</em>) and \(U_{[a,b]}\) (<em>until</em>) impose timed requirements over the bounded horizon
+      \(H\). STL also carries robust semantics \(\rho^{\phi}(x, \tau_0) \in \mathbb{R}\), measuring <em>how
+      robustly</em> a trajectory satisfies \(\phi\).</p>
+
+      <h3>Receding-horizon planning</h3>
+      <p class="body-text">At each time \(t\), given a planning horizon \(\mathcal{H} \le H - t\), stage cost
+      \(q\) and terminal cost \(E\), the planner solves the open-loop optimal control problem</p>
+      $$v_t^{*,(t)},\dots,v_{t+\mathcal{H}-1}^{*,(t)} :=
+      \operatorname*{arg\,min}_{u_t,\dots,u_{t+\mathcal{H}-1}\in\,\mathcal{U}}
+      \Big\{ E\big(x_{t+\mathcal{H}}^{(t)}\big) + \textstyle\sum_{\tau=t}^{t+\mathcal{H}-1}
+      q\big(x_\tau^{(t)}, u_\tau\big)
+      \;\;\text{s.t.}\;\; x_{\tau+1}^{(t)} = f\big(x_\tau^{(t)}, u_\tau\big) \Big\},$$
+      <p class="body-text">executes the first input, and re-plans &mdash; producing the closed-loop trajectory
+      \(x^*\).</p>
+
+      <div class="thm">
+        <p><strong>Problem 1.</strong> Given the system \(f\), the initial state \(x_0\), a planning horizon
+        \(\mathcal{H}\), and cost functions \(q\) and \(E\), design a feedback control such that
+        \((x^*, 0) \models \phi\), where \(\phi\) is the user-defined STL specification. At each time
+        \(t \in \{0,\dots,H-1\}\), we would like to optimize the OCP above.</p>
+      </div>
+      <p class="body-text">The difficulty is that the OCP knows nothing about \(\phi\): a planner that simply
+      minimizes cost may be driven straight through unsafe regions, while encoding \(\phi\) into the cost (via
+      robust semantics) requires expensive long-horizon rollouts and offers no satisfaction mechanism.</p>
+    </div>
+  </section>
+
+  <!-- ================= METHOD ================= -->
+  <section class="section section-tint" id="method">
+    <div class="container">
+      <h2>Method</h2>
+      <p class="lead">
+        A safety instruction becomes an STL formula, the formula becomes a time-varying CBF, and the CBF steers
+        MPPI twice: first by re-weighting sampled rollouts, then by projecting the weighted rollout back into the
+        safe set.
+      </p>
+
+      <figure class="figure">
+        <img data-src="images.fig1" alt="Overview of safety-aware-stl-mppi" loading="lazy" />
+        <figcaption><strong>Overview of safety-aware-stl-mppi.</strong> The STL formula \(\phi\) is encoded as a
+        time-varying CBF \(h^{\phi}(x, t)\) whose zero-superlevel set (orange) shrinks toward the region
+        consistent with \(\phi\). MPPI plans with CBF-informed weighted rollouts, and any weighted rollout that
+        violates the CBF is projected back into the safe region. The planner runs in receding horizon,
+        producing a closed-loop trajectory (yellow) that satisfies \(\phi\). Drawings are hypothetical.</figcaption>
+      </figure>
+
+      <h3>1 &middot; Encoding STL as a time-varying CBF</h3>
+      <p class="body-text">Following the continuous-time construction of Lindemann and Dimarogonas, we adapt the
+      encoding of STL formulas into time-varying control barrier functions to discrete time. A differentiable
+      function \(h : D \times \mathbb{Z}_{\ge 0} \to \mathbb{R}\) induces the time-varying set
+      \(\mathcal{C}_t := \{x \in D \mid h(x,t) \ge 0\}\).</p>
+
+      <div class="thm">
+        <p><strong>Definition 1 (Time-varying CBF).</strong> \(h\) is a candidate CBF for \(f\) if
+        \(\mathcal{C}_t \neq \emptyset\) for all \(t \in \{0,\dots,H\}\). A candidate CBF is <em>valid</em> if for
+        every \(t \in \{0,\dots,H-1\}\) and every \(x \in \mathcal{C}_t\) there exists
+        \(u \in \mathcal{U}\) such that
+        $$h\big(f(x,u),\, t+1\big) - h(x,t) \;\ge\; -\alpha\, h(x,t), \qquad \alpha \in (0,1].$$</p>
+      </div>
+      <div class="thm">
+        <p><strong>Theorem 1 (Forward invariance).</strong> Let \(x_0 \in \mathcal{C}_0\) and let every input
+        satisfy the constraint above. Then \(x_t \in \mathcal{C}_t\) for all \(t \in \{0,\dots,H\}\).</p>
+      </div>
+
+      <p class="body-text">Given \(\phi\), a CBF \(h^{\phi}\) is constructed recursively. A predicate \(\pi^\mu\)
+      contributes a barrier term &mdash; \(\mu\) itself, or a smooth surrogate. Each temporal operator contributes a
+      term that depends explicitly on time: for an <em>eventually</em> requirement \(F_{[a,b]}\,\varphi\), for
+      example, the term tightens as the deadline \(b\) approaches, so the set it permits gradually contracts toward
+      the states where \(\varphi\) holds, forcing the system to reach them in time. Conjunctions are combined
+      through a smooth under-approximation of the minimum,</p>
+      $$\min_{i\in\{1,\dots,p\}} h_i(x,t) \;\ge\; \widetilde{\min}\big(h_1(x,t),\dots,h_p(x,t)\big)
+      := -\ln\Big(\textstyle\sum_{i=1}^{p} \exp\big(-h_i(x,t)\big)\Big),$$
+      <p class="body-text">following the encoding rules below. Rows 2&ndash;4 encode temporal operators over
+      predicates, rows 5&ndash;7 over conjunctions, and the last row conjunctions over temporal operators. A
+      deletion mechanism removes each term once its time window has passed, reducing conservatism.</p>
+
+      <figure class="figure">
+        <img data-src="images.table1" alt="Table I: candidate CBF functions for STL encoding" loading="lazy" />
+        <figcaption><strong>Candidate CBF functions for STL encoding</strong> (Table I of the paper).</figcaption>
+      </figure>
+
+      <div class="thm">
+        <p><strong>Theorem 2 (Safety from the STL CBF).</strong> Let \(x_0 \in \mathcal{C}_0\) and suppose a valid
+        CBF is constructed following the encoding rules. Then enforcing the CBF constraint at every step implies
+        \((x,0) \models \phi\).</p>
+      </div>
+
+      <h3>2 &middot; CBF-informed weighted rollouts</h3>
+      <p class="body-text">MPPI samples \(K\) control perturbations \(\omega^{k,(t)}\) with
+      \(\omega_\tau^{k,(t)} \sim \mathcal{N}(0, \Sigma_\omega)\) around a nominal sequence \(v^{(t)}\) and rolls
+      them out in parallel. The standard sample cost</p>
+      $$J^{k,(t)} := E\big(x^{k,(t)}_{t+\mathcal{H}}\big) + \sum_{\tau=t}^{t+\mathcal{H}-1}
+      \Big[ q\big(x^{k,(t)}_\tau, u^{k,(t)}_\tau\big)
+      + \gamma\, \big(v^{(t)}_\tau\big)^{T} \Sigma_\omega^{-1} \omega_\tau^{k,(t)} \Big]$$
+      <p class="body-text">carries no information about \(\phi\), so we augment it with the CBF-constraint
+      violation along each rollout:</p>
+      $$J_\phi^{k,(t)} := J^{k,(t)} + \eta \sum_{\tau=t}^{t+\mathcal{H}-1} C_{\mathrm{CBF}}\big(x^{k,(t)}, \tau\big),
+      \qquad
+      C_{\mathrm{CBF}} := \max\Big\{0,\; (1-\alpha)\, h^{\phi}\big(x^{k,(t)}_{\tau},\tau\big)
+      - h^{\phi}\big(x^{k,(t)}_{\tau+1},\tau+1\big)\Big\}.$$
+      <p class="body-text">Rollouts that drift out of the shrinking safe set receive lower weights in
+      the weighted average
+      \(v^{+,(t)} = \sum_k W^{k,(t)} u^{k,(t)} / \sum_k W^{k,(t)}\) with
+      \(W^{k,(t)} := \exp[-\tfrac{1}{\lambda}(J_\phi^{k,(t)} - \min_i J_\phi^{i,(t)})]\). Compared with placing
+      STL robustness in the cost, \(C_{\mathrm{CBF}}\) is evaluated per step &mdash; no shrinking-horizon robustness
+      computation is needed.</p>
+
+      <h3>3 &middot; A lightweight CBF projection</h3>
+      <p class="body-text">The weighted rollout still carries no guarantee, so each of its first \(N{+}1\) inputs
+      is projected onto the CBF constraint. Because the exact constraint is nonconvex in discrete time, a
+      first-order Taylor expansion of \(h^{\phi}\) around \(x^{(t)}_\tau\) with
+      \(A(x^{(t)}_\tau, \tau) := \tfrac{\partial h^{\phi}}{\partial x}\big(x^{(t)}_\tau, \tau+1\big)\) yields the
+      affine condition</p>
+      $$h^{\phi}\big(x^{(t)}_\tau, \tau+1\big) + A\big(x^{(t)}_\tau,\tau\big)^{T}
+      \Big[ f_0\big(x^{(t)}_\tau\big) - x^{(t)}_\tau + g\big(x^{(t)}_\tau\big)\, v^{s}_\tau \Big]
+      \;\ge\; (1-\alpha)\, h^{\phi}\big(x^{(t)}_\tau, \tau\big),$$
+      <p class="body-text">and the projection becomes a tiny quadratic program, where \(\Pi\) and \(b\) stack
+      the CBF half-space with the active actuation limits:</p>
+      $$\hat{v}^{s,(t)}_\tau = \operatorname*{arg\,min}_{v^s_\tau}
+      \tfrac{1}{2}\big(v^{s}_\tau - v^{+,(t)}_\tau\big)^{T}\big(v^{s}_\tau - v^{+,(t)}_\tau\big)
+      \quad \text{s.t.} \quad \Pi\, v^{s}_\tau \le b,$$
+      <p class="body-text">which is solved efficiently at runtime and, when \(\mathcal{U} = \mathbb{R}^m\), in
+      closed form:</p>
+      $$\hat{v}^{s,(t)}_\tau = v^{+,(t)}_\tau - a_{\mathrm{cbf}}\big(x^{(t)}_\tau,\tau\big)\,
+      \frac{\max\big\{0,\; a_{\mathrm{cbf}}^{T} v^{+}_\tau - b_{\mathrm{cbf}}\big\}}
+      {\big\|a_{\mathrm{cbf}}\big(x^{(t)}_\tau,\tau\big)\big\|_2^2}.$$
+
+      <figure class="figure narrow">
+        <img data-src="images.algorithm1" alt="Algorithm 1: Safety-Aware-STL-MPPI" loading="lazy" />
+        <figcaption><strong>The complete planner.</strong> Lines 4&ndash;13: parallel CBF-informed rollouts;
+        lines 14&ndash;15: weighting; line 16: CBF projection; the result warm-starts the next
+        receding-horizon step.</figcaption>
+      </figure>
+
+      <p class="body-text">Because the real-time implementation enforces the first-order approximation rather than
+      the exact constraint, perfect safety is not guaranteed theoretically; the paper discusses an optional
+      robustification (Theorem 3 in the appendix) and evaluates satisfaction empirically &mdash; reaching 100%
+      across all case studies.</p>
+    </div>
+  </section>
+
+  <!-- ================= RESULTS ================= -->
+  <section class="section" id="results">
+    <div class="container">
+      <h2>Results</h2>
+      <p class="lead">
+        Four artificial Mars Rover missions with different dynamics, goals and STL specifications, each run with
+        and without actuation limits, plus a photorealistic quadcopter task in NVIDIA Isaac Lab.
+      </p>
+
+      <h3>Mars Rover case studies</h3>
+      <p class="body-text">
+        <strong>Case A</strong> uses nonlinear dynamics, <strong>Cases B and C</strong> a single integrator with
+        timed reach-avoid goals (in Case C the goal location may be unreachable under the specification), and
+        <strong>Case D</strong> a double integrator among 13 obstacles. We compare against vanilla MPPI,
+        reach-avoid MPPI, robustness-based MPPI and penalty-based MPPI.
+        <strong>Success rate (SR)</strong> is the share of 20 closed-loop trials with non-negative STL robustness,
+        and <strong>timing</strong> is the average closed-loop planning time in seconds. All methods satisfied the
+        actuation limits in every trial.
+      </p>
+
+      <figure class="figure">
+        <img data-src="images.fig2" alt="Example trajectories from safety-aware-stl-mppi in cases A to D" loading="lazy" />
+        <figcaption><strong>Example trajectories planned with safety-aware-stl-mppi (limited actuation).</strong>
+        Blue: closed-loop trajectory. Red: obstacles. Green: regions to reach within the specified time window.</figcaption>
+      </figure>
+
+      <div class="grid">
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata" class="contain">
+            <source data-src="videos.roverCaseC" type="video/mp4">
+          </video>
+          <figcaption><strong>Case C, closed-loop rollout.</strong> The red curve is the closed-loop trajectory,
+          the blue-outlined region is the time-varying safe set, and the green whiskers at the rover are the
+          sampled MPPI rollouts at the current step. The hypothetical goal (cross) stays out of reach, yet the
+          planner respects the specification.</figcaption>
+        </figure>
+        <figure class="grid-item">
+          <video autoplay muted loop playsinline controls preload="metadata">
+            <source data-src="videos.quadcopter" type="video/mp4">
+          </video>
+          <figcaption><strong>Quadcopter in Isaac Lab (4&times; speed).</strong> The Crazyflie weaves among
+          forklifts, tables and a stand to reach the goal region.</figcaption>
+        </figure>
+      </div>
+
+      <div class="at-chart" id="at-chart">
+        <div class="at-legend">
+          <span><i class="at-swatch at-swatch-human"></i>Safety-aware-STL-MPPI (ours)</span>
+          <span><i class="at-swatch at-swatch-base"></i>Baselines</span>
+        </div>
+
+        <div class="at-group">
+          <div class="at-group-head"><span class="at-task">Case C &middot; success rate</span><span class="at-speedup">limited actuation</span></div>
+          <div class="at-row"><span class="at-name ours">Ours</span><div class="at-track"><div class="at-bar at-human" style="--w: 100%;"></div></div><span class="at-val">100%</span></div>
+          <div class="at-row"><span class="at-name">Vanilla MPPI</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 0%;"></div></div><span class="at-val">0%</span></div>
+          <div class="at-row"><span class="at-name">Reach-avoid MPPI</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 0%;"></div></div><span class="at-val">0%</span></div>
+          <div class="at-row"><span class="at-name">Robustness-based</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 90%;"></div></div><span class="at-val">90%</span></div>
+          <div class="at-row"><span class="at-name">Penalty-based</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 85%;"></div></div><span class="at-val">85%</span></div>
+        </div>
+
+        <div class="at-group">
+          <div class="at-group-head"><span class="at-task">Case D &middot; success rate</span><span class="at-speedup">limited actuation</span></div>
+          <div class="at-row"><span class="at-name ours">Ours</span><div class="at-track"><div class="at-bar at-human" style="--w: 100%;"></div></div><span class="at-val">100%</span></div>
+          <div class="at-row"><span class="at-name">Vanilla MPPI</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 0%;"></div></div><span class="at-val">0%</span></div>
+          <div class="at-row"><span class="at-name">Reach-avoid MPPI</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 25%;"></div></div><span class="at-val">25%</span></div>
+          <div class="at-row"><span class="at-name">Robustness-based</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 55%;"></div></div><span class="at-val">55%</span></div>
+          <div class="at-row"><span class="at-name">Penalty-based</span><div class="at-track"><div class="at-bar at-teleop" style="--w: 60%;"></div></div><span class="at-val">60%</span></div>
+        </div>
+      </div>
+      <p class="table-caption"><strong>Success rate in the two hardest cases.</strong> Vanilla and reach-avoid MPPI
+      cannot cope with tight timed constraints, and the robustness-based and penalty-based variants only partly
+      satisfy them.</p>
+
+      <h3>Full comparison</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">(a) Limited actuation</th>
+              <th class="group" colspan="2">Case A</th><th class="group" colspan="2">Case B</th>
+              <th class="group" colspan="2">Case C</th><th class="group" colspan="2">Case D</th>
+            </tr>
+            <tr class="sub">
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight"><td><strong>Safety-aware-STL-MPPI (Ours)</strong></td>
+              <td class="num"><strong>100%</strong></td><td class="num">5.26</td>
+              <td class="num"><strong>100%</strong></td><td class="num">8.80</td>
+              <td class="num"><strong>100%</strong></td><td class="num">8.84</td>
+              <td class="num"><strong>100%</strong></td><td class="num">17.93</td></tr>
+            <tr><td>Vanilla MPPI</td>
+              <td class="num">100%</td><td class="num">1.35</td><td class="num">100%</td><td class="num">3.32</td>
+              <td class="num">0%</td><td class="num">3.33</td><td class="num">0%</td><td class="num">5.97</td></tr>
+            <tr><td>Reach-avoid MPPI</td>
+              <td class="num">100%</td><td class="num">5.92</td><td class="num">100%</td><td class="num">7.31</td>
+              <td class="num">0%</td><td class="num">7.32</td><td class="num">25%</td><td class="num">17.05</td></tr>
+            <tr><td>Robustness-based MPPI</td>
+              <td class="num">100%</td><td class="num">190.35</td><td class="num">95%</td><td class="num">90.74</td>
+              <td class="num">90%</td><td class="num">90.84</td><td class="num">55%</td><td class="num">1060.55</td></tr>
+            <tr><td>Penalty-based MPPI</td>
+              <td class="num">100%</td><td class="num">191.16</td><td class="num">80%</td><td class="num">91.21</td>
+              <td class="num">85%</td><td class="num">91.34</td><td class="num">60%</td><td class="num">1057.51</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">(b) Unlimited actuation</th>
+              <th class="group" colspan="2">Case A</th><th class="group" colspan="2">Case B</th>
+              <th class="group" colspan="2">Case C</th><th class="group" colspan="2">Case D</th>
+            </tr>
+            <tr class="sub">
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+              <th class="num">SR &uarr;</th><th class="num">Timing &darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight"><td><strong>Safety-aware-STL-MPPI (Ours)</strong></td>
+              <td class="num"><strong>100%</strong></td><td class="num">3.80</td>
+              <td class="num"><strong>100%</strong></td><td class="num">7.40</td>
+              <td class="num"><strong>100%</strong></td><td class="num">7.37</td>
+              <td class="num"><strong>100%</strong></td><td class="num">16.39</td></tr>
+            <tr><td>Vanilla MPPI</td>
+              <td class="num">100%</td><td class="num">1.55</td><td class="num">100%</td><td class="num">3.31</td>
+              <td class="num">0%</td><td class="num">3.31</td><td class="num">0%</td><td class="num">5.90</td></tr>
+            <tr><td>Reach-avoid MPPI</td>
+              <td class="num">100%</td><td class="num">3.47</td><td class="num">100%</td><td class="num">5.19</td>
+              <td class="num">0%</td><td class="num">5.21</td><td class="num">25%</td><td class="num">14.55</td></tr>
+            <tr><td>Robustness-based MPPI</td>
+              <td class="num">100%</td><td class="num">202.87</td><td class="num">100%</td><td class="num">90.32</td>
+              <td class="num">100%</td><td class="num">90.31</td><td class="num">55%</td><td class="num">1057.29</td></tr>
+            <tr><td>Penalty-based MPPI</td>
+              <td class="num">95%</td><td class="num">203.45</td><td class="num">100%</td><td class="num">90.65</td>
+              <td class="num">95%</td><td class="num">90.59</td><td class="num">60%</td><td class="num">1057.07</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption"><strong>Success rate (SR) and closed-loop planning time (seconds) over 20 trials per
+      case.</strong> Our method achieves a 100% empirical STL satisfaction rate in every evaluated case. It is significantly faster than the
+      robustness- and penalty-based variants.</p>
+
+      <h3>Quadcopter simulation in Isaac Lab</h3>
+      <p class="body-text">A Crazyflie quadcopter must reach a goal region near (0,&nbsp;0,&nbsp;1) within 5&nbsp;s in
+      an artificial factory with seven obstacles (three package tables, a two-level stand and three forklifts)
+      while staying above the ground. Planning uses a 3D double integrator at 200&nbsp;Hz with <em>K</em>&nbsp;=&nbsp;100
+      rollouts. Over 50 trials every plan respected the actuation limit, with an average planning time of 15.21&nbsp;s. The
+      planned waypoints were then tracked in Isaac Sim, and 100% of the tracked trajectories satisfied the
+      specification.</p>
+      <figure class="figure">
+        <img data-src="images.fig3" alt="Quadcopter simulation: planned trajectory and rollouts" loading="lazy" />
+        <figcaption><strong>Quadcopter simulation.</strong> (a) An example planned trajectory (red waypoints).
+        (b) Sampled rollouts (gray) and the weighted rollout (yellow) during planning.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= BIBTEX ================= -->
+  <section class="section" id="bibtex">
+    <div class="container">
+      <h2>BibTeX</h2>
+      <pre><code data-text="text.bibtex"></code></pre>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>
+      Website template modified from <a href="https://nerfies.github.io/">NeRFies</a>, <a
+        href="https://umi-on-legs.github.io/">UMI on Legs</a>, and <a
+        href="https://crossformer-model.github.io/">CrossFormer</a>.
+    </p>
+    <p class="muted small">
+      This website is licensed under a <a rel="license"
+        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+        International License</a>.
+    </p>
+  </div>
+</footer>
+
+<script src="./static/js/script.js"></script>
+
+</body>
+
+</html>

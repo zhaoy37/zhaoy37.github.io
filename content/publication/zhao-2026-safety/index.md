@@ -36,6 +36,10 @@ featured: true
 topic: planning-control-verification
 
 # Custom links (uncomment lines below)
+links:
+- name: Project
+  url: /safety-aware-stl-mppi/
+
 url_pdf: 'https://arxiv.org/pdf/2608.23972'
 url_code: ''
 url_dataset: ''
@@ -52,6 +56,8 @@ image:
   focal_point: ''
   preview_only: true
 
+# Video clip shown instead of the featured image on homepage cards
+video_preview: /safety-aware-stl-mppi/static/videos/quad.mp4
 ---
 
 <center>
