@@ -34,7 +34,7 @@ window.SITE_CONFIG = {
     // Narrated summary video (Video section)
     summary: "./static/videos/summary.mp4",
     // Results section clips
-    roverCaseC: "./static/videos/rover.mp4",
+    roverCaseC: "./static/videos/animation.mp4",
     quadcopter: "./static/videos/quad.mp4",
   },
 
